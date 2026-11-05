@@ -8,6 +8,7 @@ A modern static portfolio showcasing public websites, software, games, and proje
 ## Current features
 
 - Ten public projects with **real website screenshots**, not generated mockups.
+- Five **interactive featured project flip cards**: hover on desktop; tap or press Enter on touch/keyboard; Escape or Back to preview closes. Each reverse face has a description, tech tags, and Website/GitHub/Case Study links. The remaining public projects stay in a simpler archive.
 - Seven detailed case studies: ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly, SwiftSupply, and Wtv Innovations.
 - Dedicated **Website**, **GitHub**, and **Case study** links where available.
 - Searchable project directory with category filters, an accessible result count, and an empty-state message.
@@ -45,6 +46,7 @@ The form explicitly warns against publishing addresses, personal contact informa
 | --- | --- |
 | `index.html` | Homepage and portfolio directory |
 | `styles.css`, `polish.css`, `script.js` | Shared styling and interactions |
+| `flip-cards.css` | 3D featured cards with mobile, keyboard, and reduced-motion styles |
 | `assets/screenshots/` | Real project screenshots |
 | `case-studies/*.html`, `case-studies/case.css` | Seven detailed case studies |
 | `contact.html`, `contact.css`, `contact.js` | Inquiry drafting and privacy-aware UX |
