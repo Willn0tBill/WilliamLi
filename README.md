@@ -8,7 +8,7 @@ A modern static portfolio showcasing public websites, software, games, and proje
 ## Current features
 
 - Ten public projects with **real website screenshots**, not generated mockups.
-- A dedicated **Music & Performance** page featuring WillnotBill's released artist catalog, Apple Music profile, Spotify search, school ensembles, and an overview of musical creativity. Unreleased works are intentionally excluded.
+- A redesigned **WillnotBill artist portfolio** with an official-artwork spotlight for *Serenity*, 11 verified 2025–2026 releases, full artwork and Apple Music track links, Spotify/Apple artist profiles, accessible year/search filtering, and ensemble experience. Unreleased projects stay private.
 - Five **interactive featured project flip cards**: hover on desktop; tap or press Enter on touch/keyboard; Escape or Back to preview closes. Each reverse face has a description, tech tags, and Website/GitHub/Case Study links. The remaining public projects stay in a simpler archive.
 - Seven detailed case studies: ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly, SwiftSupply, and Wtv Innovations.
 - Dedicated **Website**, **GitHub**, and **Case study** links where available.
@@ -50,7 +50,8 @@ The form explicitly warns against publishing addresses, personal contact informa
 | Path | Purpose |
 | --- | --- |
 | `index.html` | Homepage and portfolio directory |
-| `music.html`, `music.css` | Published music catalog, streaming links, and ensemble experience |
+| `music.html`, `music-redesign.css`, `music-interactions.js` | Artist page, official discography artwork, streaming links, accessible filters and ensemble experience |
+| `music.css` | Music feature and latest-release artwork on the portfolio homepage |
 | `styles.css`, `polish.css`, `script.js` | Shared styling and interactions |
 | `enhancements.css`, `enhancements.js` | Screenshot lightbox, search shortcuts, active navigation and approach section |
 | `flip-cards.css` | 3D featured cards with mobile, keyboard, and reduced-motion styles |
