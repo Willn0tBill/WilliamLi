@@ -12,6 +12,10 @@ A modern static portfolio showcasing public websites, software, games, and proje
 - Seven detailed case studies: ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly, SwiftSupply, and Wtv Innovations.
 - Dedicated **Website**, **GitHub**, and **Case study** links where available.
 - Searchable project directory with category filters, an accessible result count, and an empty-state message.
+- An **accessible screenshot viewer for all 10 projects**, with left/right arrow navigation, project website, GitHub, and case-study links; the gallery respects active project filters.
+- **Quick search chips** (JavaScript, Business, Community), technology-keyword search, a clear/reset control, and keyboard shortcuts (`/` or `Ctrl/Cmd+K` to search; Escape to clear).
+- A reading-progress line, active-section navigation, and a back-to-top button.
+- A concise four-stage **From idea to experience** section focused on discovery, design, building, and iteration.
 - Mobile navigation, light/dark mode, reduced-motion support, skip links, SEO metadata, sitemap, and 404 page.
 - A separate **Contact** page for drafting a public GitHub issue and copying an inquiry.
 - A **Support My Work** section; monetary donations remain disabled until a verified provider URL is supplied.
@@ -46,6 +50,7 @@ The form explicitly warns against publishing addresses, personal contact informa
 | --- | --- |
 | `index.html` | Homepage and portfolio directory |
 | `styles.css`, `polish.css`, `script.js` | Shared styling and interactions |
+| `enhancements.css`, `enhancements.js` | Screenshot lightbox, search shortcuts, active navigation and approach section |
 | `flip-cards.css` | 3D featured cards with mobile, keyboard, and reduced-motion styles |
 | `assets/screenshots/` | Real project screenshots |
 | `case-studies/*.html`, `case-studies/case.css` | Seven detailed case studies |
