@@ -14,6 +14,7 @@
   <link rel="icon" type="image/svg+xml" sizes="any" href="./brand-mark-v4.svg">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./polish.css?v=1">
+  <link rel="stylesheet" href="./flip-cards.css?v=1">
   <script src="./script.js" defer></script>
 </head>
 <body>
@@ -115,67 +116,161 @@
       </div>
       <p class="project-results" id="project-results" role="status" aria-live="polite">Showing 10 projects</p>
       <div class="no-results" id="no-results" hidden>No matching projects. Try another keyword or choose “All work”.</div>
+      <p class="flip-intro-hint" id="flip-help"><strong>Featured projects</strong> — hover to explore, or tap / press Enter to flip each card.</p>
       <div class="project-grid">
-        <article class="project-card reveal" data-category="games">
-          <a class="project-visual visual-profit" href="https://willn0tbill.github.io/ProfitLands/" target="_blank" rel="noopener noreferrer" aria-label="Open ProfitLands website">
-      <span class="visual-label">01 / STRATEGY GAME</span>
-      <img class="real-project-shot" loading="lazy" decoding="async" src="./assets/screenshots/profitlands.jpg" alt="Actual screenshot of the ProfitLands website" width="1120" height="718">
-      <span class="screenshot-provenance">REAL WEBSITE SCREENSHOT</span>
-      <span class="visual-arrow" aria-hidden="true">↗</span>
-    </a>
-          <div class="project-meta"><div class="project-tags"><span>GAME DEVELOPMENT</span><span>JAVASCRIPT</span></div><span class="project-index">/ 01</span></div>
-          <div class="project-title-row"><h3>ProfitLands</h3><span aria-hidden="true">↗</span></div>
-          <p>A browser-based business and empire-building strategy game focused on systems, progression, and player decisions.</p>
-          <div class="project-links"><a class="project-link" href="https://willn0tbill.github.io/ProfitLands/" target="_blank" rel="noopener noreferrer" aria-label="Open ProfitLands website">Website <span aria-hidden="true">↗</span></a><a class="project-link" href="https://github.com/Willn0tBill/ProfitLands" target="_blank" rel="noopener noreferrer" aria-label="View ProfitLands on GitHub">GitHub <span aria-hidden="true">↗</span></a><a class="project-link project-case-link" href="./case-studies/profitlands.html">Case study <span aria-hidden="true">↗</span></a></div>
+        <article class="project-card flip-project-card reveal" data-category="games" data-project="profitlands">
+          <div class="flip-card" data-flip-card>
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front" id="preview-profitlands" aria-hidden="false">
+                <img src="./assets/screenshots/profitlands.jpg" width="1120" height="718" loading="lazy" decoding="async" alt="Actual public screenshot of the ProfitLands website">
+                <div class="flip-front-top"><span>01 / STRATEGY GAME</span><span class="flip-front-status">PLAYABLE PROTOTYPE</span></div>
+                <div class="flip-front-bottom">
+                  <span class="flip-eyebrow">FEATURED PROJECT</span>
+                  <h3 class="flip-title">ProfitLands</h3>
+                  <button class="flip-toggle" type="button" aria-expanded="false" aria-controls="details-profitlands" aria-label="See ProfitLands project details">Explore project <span aria-hidden="true">↻</span></button>
+                </div>
+              </div>
+              <div class="flip-card-face flip-card-back" id="details-profitlands" aria-hidden="true">
+                <div class="flip-back-top"><span>PROJECT DETAILS</span><span class="flip-back-index">01 / 05</span></div>
+                <h3 class="flip-back-title">ProfitLands</h3>
+                <p class="flip-description">An open-ended business strategy game where players start small, expand their empire, and manage operations, inventory, and growth. The focus is making complex decisions feel clear as the simulation scales.</p>
+                <span class="flip-tech-label">BUILT WITH / FOCUS</span>
+                <div class="flip-tech-list"><span>JavaScript</span><span>Simulation</span><span>UI Systems</span></div>
+                <div class="flip-back-bottom">
+                  <div class="flip-back-links">
+                    <a href="https://willn0tbill.github.io/ProfitLands/" target="_blank" rel="noopener noreferrer" aria-label="Open ProfitLands website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/Willn0tBill/ProfitLands" target="_blank" rel="noopener noreferrer" aria-label="View ProfitLands GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="./case-studies/profitlands.html" aria-label="Read ProfitLands case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <button type="button" class="flip-close" aria-label="Return to ProfitLands preview" tabindex="-1">↶ Back to preview</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card reveal" data-category="tools">
-          <a class="project-visual visual-swift" href="https://willn0tbill.github.io/SwiftSupplyOps/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply Ops website">
-      <span class="visual-label">02 / OPERATIONS PLATFORM</span>
-      <img class="real-project-shot" loading="lazy" decoding="async" src="./assets/screenshots/swiftsupplyops.jpg" alt="Actual screenshot of the SwiftSupply Ops website" width="1120" height="718">
-      <span class="screenshot-provenance">STAFF LOGIN · PUBLIC SCREENSHOT</span>
-      <span class="visual-arrow" aria-hidden="true">↗</span>
-    </a>
-          <div class="project-meta"><div class="project-tags"><span>BUSINESS TOOLS</span><span>PRODUCT DESIGN</span></div><span class="project-index">/ 02</span></div>
-          <div class="project-title-row"><h3>SwiftSupply Ops</h3><span aria-hidden="true">↗</span></div>
-          <p>A unified, mobile-first operations platform for managing services, inventory, appointments, and business workflows.</p>
-          <div class="project-links"><a class="project-link" href="https://willn0tbill.github.io/SwiftSupplyOps/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply Ops website">Website <span aria-hidden="true">↗</span></a><a class="project-link" href="https://github.com/Willn0tBill/SwiftSupplyOps" target="_blank" rel="noopener noreferrer" aria-label="View SwiftSupply Ops on GitHub">GitHub <span aria-hidden="true">↗</span></a><a class="project-link project-case-link" href="./case-studies/swiftsupply-ops.html">Case study <span aria-hidden="true">↗</span></a></div>
+        <article class="project-card flip-project-card reveal" data-category="tools" data-project="swiftsupply-ops">
+          <div class="flip-card" data-flip-card>
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front" id="preview-swiftsupply-ops" aria-hidden="false">
+                <img src="./assets/screenshots/swiftsupplyops.jpg" width="1120" height="718" loading="lazy" decoding="async" alt="Actual public screenshot of the SwiftSupply Ops website">
+                <div class="flip-front-top"><span>02 / BUSINESS PLATFORM</span><span class="flip-front-status">STAFF-ONLY TOOL</span></div>
+                <div class="flip-front-bottom">
+                  <span class="flip-eyebrow">FEATURED PROJECT</span>
+                  <h3 class="flip-title">SwiftSupply Ops</h3>
+                  <button class="flip-toggle" type="button" aria-expanded="false" aria-controls="details-swiftsupply-ops" aria-label="See SwiftSupply Ops project details">Explore project <span aria-hidden="true">↻</span></button>
+                </div>
+              </div>
+              <div class="flip-card-face flip-card-back" id="details-swiftsupply-ops" aria-hidden="true">
+                <div class="flip-back-top"><span>PROJECT DETAILS</span><span class="flip-back-index">02 / 05</span></div>
+                <h3 class="flip-back-title">SwiftSupply Ops</h3>
+                <p class="flip-description">A mobile-first workspace for vending, service jobs, and selling. It brings staff workflows, inventory, appointments, and business records together behind role-based access.</p>
+                <span class="flip-tech-label">BUILT WITH / FOCUS</span>
+                <div class="flip-tech-list"><span>JavaScript</span><span>Supabase</span><span>PWA</span></div>
+                <div class="flip-back-bottom">
+                  <div class="flip-back-links">
+                    <a href="https://willn0tbill.github.io/SwiftSupplyOps/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply Ops website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/Willn0tBill/SwiftSupplyOps" target="_blank" rel="noopener noreferrer" aria-label="View SwiftSupply Ops GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="./case-studies/swiftsupply-ops.html" aria-label="Read SwiftSupply Ops case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <button type="button" class="flip-close" aria-label="Return to SwiftSupply Ops preview" tabindex="-1">↶ Back to preview</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card reveal" data-category="websites community">
-          <a class="project-visual visual-troop" href="https://willn0tbill.github.io/Troop710/" target="_blank" rel="noopener noreferrer" aria-label="Open Troop 710 website">
-      <span class="visual-label">03 / COMMUNITY WEBSITE</span>
-      <img class="real-project-shot" loading="lazy" decoding="async" src="./assets/screenshots/troop710.jpg" alt="Actual screenshot of the Troop 710 website" width="1120" height="718">
-      <span class="screenshot-provenance">REAL WEBSITE SCREENSHOT</span>
-      <span class="visual-arrow" aria-hidden="true">↗</span>
-    </a>
-          <div class="project-meta"><div class="project-tags"><span>WEB DESIGN</span><span>ACCESSIBILITY</span></div><span class="project-index">/ 03</span></div>
-          <div class="project-title-row"><h3>Troop 710 Website</h3><span aria-hidden="true">↗</span></div>
-          <p>A responsive community website with resources, information architecture, and accessible navigation for visitors.</p>
-          <div class="project-links"><a class="project-link" href="https://willn0tbill.github.io/Troop710/" target="_blank" rel="noopener noreferrer" aria-label="Open Troop 710 website">Website <span aria-hidden="true">↗</span></a><a class="project-link" href="https://github.com/Willn0tBill/Troop710" target="_blank" rel="noopener noreferrer" aria-label="View Troop 710 on GitHub">GitHub <span aria-hidden="true">↗</span></a><a class="project-link project-case-link" href="./case-studies/troop710.html">Case study <span aria-hidden="true">↗</span></a></div>
+        <article class="project-card flip-project-card reveal" data-category="websites community" data-project="troop710">
+          <div class="flip-card" data-flip-card>
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front" id="preview-troop710" aria-hidden="false">
+                <img src="./assets/screenshots/troop710.jpg" width="1120" height="718" loading="lazy" decoding="async" alt="Actual public screenshot of the Troop 710 website">
+                <div class="flip-front-top"><span>03 / COMMUNITY WEBSITE</span><span class="flip-front-status">PUBLIC WEBSITE</span></div>
+                <div class="flip-front-bottom">
+                  <span class="flip-eyebrow">FEATURED PROJECT</span>
+                  <h3 class="flip-title">Troop 710</h3>
+                  <button class="flip-toggle" type="button" aria-expanded="false" aria-controls="details-troop710" aria-label="See Troop 710 project details">Explore project <span aria-hidden="true">↻</span></button>
+                </div>
+              </div>
+              <div class="flip-card-face flip-card-back" id="details-troop710" aria-hidden="true">
+                <div class="flip-back-top"><span>PROJECT DETAILS</span><span class="flip-back-index">03 / 05</span></div>
+                <h3 class="flip-back-title">Troop 710</h3>
+                <p class="flip-description">A public resource website with organized forms, program information, leadership pages, and an interactive toolkit. Designed to make community information easier to discover.</p>
+                <span class="flip-tech-label">BUILT WITH / FOCUS</span>
+                <div class="flip-tech-list"><span>HTML &amp; CSS</span><span>JavaScript</span><span>Accessibility</span></div>
+                <div class="flip-back-bottom">
+                  <div class="flip-back-links">
+                    <a href="https://willn0tbill.github.io/Troop710/" target="_blank" rel="noopener noreferrer" aria-label="Open Troop 710 website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/Willn0tBill/Troop710" target="_blank" rel="noopener noreferrer" aria-label="View Troop 710 GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="./case-studies/troop710.html" aria-label="Read Troop 710 case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <button type="button" class="flip-close" aria-label="Return to Troop 710 preview" tabindex="-1">↶ Back to preview</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card reveal" data-category="games">
-          <a class="project-visual visual-nation" href="https://willn0tbill.github.io/NationWars/" target="_blank" rel="noopener noreferrer" aria-label="Open NationWars website">
-      <span class="visual-label">04 / GAME DEVELOPMENT</span>
-      <img class="real-project-shot" loading="lazy" decoding="async" src="./assets/screenshots/nationwars.jpg" alt="Actual screenshot of the NationWars website" width="1120" height="718">
-      <span class="screenshot-provenance">REAL WEBSITE SCREENSHOT</span>
-      <span class="visual-arrow" aria-hidden="true">↗</span>
-    </a>
-          <div class="project-meta"><div class="project-tags"><span>INTERACTIVE SYSTEMS</span><span>GAMEPLAY</span></div><span class="project-index">/ 04</span></div>
-          <div class="project-title-row"><h3>NationWars</h3><span aria-hidden="true">↗</span></div>
-          <p>An experimental strategy-game project exploring territory, resources, progression, and responsive gameplay systems.</p>
-          <div class="project-links"><a class="project-link" href="https://willn0tbill.github.io/NationWars/" target="_blank" rel="noopener noreferrer" aria-label="Open NationWars website">Website <span aria-hidden="true">↗</span></a><a class="project-link" href="https://github.com/Willn0tBill/NationWars" target="_blank" rel="noopener noreferrer" aria-label="View NationWars on GitHub">GitHub <span aria-hidden="true">↗</span></a><a class="project-link project-case-link" href="./case-studies/nationwars.html">Case study <span aria-hidden="true">↗</span></a></div>
+        <article class="project-card flip-project-card reveal" data-category="games" data-project="nationwars">
+          <div class="flip-card" data-flip-card>
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front" id="preview-nationwars" aria-hidden="false">
+                <img src="./assets/screenshots/nationwars.jpg" width="1120" height="718" loading="lazy" decoding="async" alt="Actual public screenshot of the NationWars website">
+                <div class="flip-front-top"><span>04 / STRATEGY GAME</span><span class="flip-front-status">DEVELOPMENT PREVIEW</span></div>
+                <div class="flip-front-bottom">
+                  <span class="flip-eyebrow">FEATURED PROJECT</span>
+                  <h3 class="flip-title">NationWars</h3>
+                  <button class="flip-toggle" type="button" aria-expanded="false" aria-controls="details-nationwars" aria-label="See NationWars project details">Explore project <span aria-hidden="true">↻</span></button>
+                </div>
+              </div>
+              <div class="flip-card-face flip-card-back" id="details-nationwars" aria-hidden="true">
+                <div class="flip-back-top"><span>PROJECT DETAILS</span><span class="flip-back-index">04 / 05</span></div>
+                <h3 class="flip-back-title">NationWars</h3>
+                <p class="flip-description">An evolving browser strategy game exploring territory, armies, resources, and battlefield control. Its public site introduces a newer 3D direction alongside legacy modes.</p>
+                <span class="flip-tech-label">BUILT WITH / FOCUS</span>
+                <div class="flip-tech-list"><span>JavaScript</span><span>Game Systems</span><span>Web UI</span></div>
+                <div class="flip-back-bottom">
+                  <div class="flip-back-links">
+                    <a href="https://willn0tbill.github.io/NationWars/" target="_blank" rel="noopener noreferrer" aria-label="Open NationWars website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/Willn0tBill/NationWars" target="_blank" rel="noopener noreferrer" aria-label="View NationWars GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="./case-studies/nationwars.html" aria-label="Read NationWars case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <button type="button" class="flip-close" aria-label="Return to NationWars preview" tabindex="-1">↶ Back to preview</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card project-card-wide reveal" data-category="websites community">
-          <a class="project-visual visual-editorial" href="https://willn0tbill.github.io/PPW/" target="_blank" rel="noopener noreferrer" aria-label="Open Paw Prints Weekly website">
-      <span class="visual-label">05 / EDITORIAL WEBSITE</span>
-      <img class="real-project-shot" loading="lazy" decoding="async" src="./assets/screenshots/ppw.jpg" alt="Actual screenshot of the Paw Prints Weekly website" width="1120" height="718">
-      <span class="screenshot-provenance">REAL WEBSITE SCREENSHOT</span>
-      <span class="visual-arrow" aria-hidden="true">↗</span>
-    </a>
-          <div class="project-card-content"><div class="project-meta"><div class="project-tags"><span>CONTENT PLATFORM</span><span>WEB DEVELOPMENT</span></div><span class="project-index">/ 05</span></div><div class="project-title-row"><h3>Paw Prints Weekly</h3><span aria-hidden="true">↗</span></div><p>A publishing-focused web project bringing together storytelling, editorial structure, and clear digital presentation.</p><div class="project-links"><a class="project-link" href="https://willn0tbill.github.io/PPW/" target="_blank" rel="noopener noreferrer" aria-label="Open Paw Prints Weekly website">Website <span aria-hidden="true">↗</span></a><a class="project-link" href="https://github.com/Willn0tBill/PPW" target="_blank" rel="noopener noreferrer" aria-label="View Paw Prints Weekly on GitHub">GitHub <span aria-hidden="true">↗</span></a><a class="project-link project-case-link" href="./case-studies/paw-prints-weekly.html">Case study <span aria-hidden="true">↗</span></a></div></div>
+        <article class="project-card flip-project-card reveal project-card-wide" data-category="websites community" data-project="paw-prints-weekly">
+          <div class="flip-card" data-flip-card>
+            <div class="flip-card-inner">
+              <div class="flip-card-face flip-card-front" id="preview-paw-prints-weekly" aria-hidden="false">
+                <img src="./assets/screenshots/ppw.jpg" width="1120" height="718" loading="lazy" decoding="async" alt="Actual public screenshot of the Paw Prints Weekly website">
+                <div class="flip-front-top"><span>05 / EDITORIAL WEBSITE</span><span class="flip-front-status">PUBLICATION SITE</span></div>
+                <div class="flip-front-bottom">
+                  <span class="flip-eyebrow">FEATURED PROJECT</span>
+                  <h3 class="flip-title">Paw Prints Weekly</h3>
+                  <button class="flip-toggle" type="button" aria-expanded="false" aria-controls="details-paw-prints-weekly" aria-label="See Paw Prints Weekly project details">Explore project <span aria-hidden="true">↻</span></button>
+                </div>
+              </div>
+              <div class="flip-card-face flip-card-back" id="details-paw-prints-weekly" aria-hidden="true">
+                <div class="flip-back-top"><span>PROJECT DETAILS</span><span class="flip-back-index">05 / 05</span></div>
+                <h3 class="flip-back-title">Paw Prints Weekly</h3>
+                <p class="flip-description">A digital home for a student publication, with an expressive editorial identity and clear navigation for school news, student life, sports, and other stories.</p>
+                <span class="flip-tech-label">BUILT WITH / FOCUS</span>
+                <div class="flip-tech-list"><span>Web Design</span><span>Editorial UX</span><span>JavaScript</span></div>
+                <div class="flip-back-bottom">
+                  <div class="flip-back-links">
+                    <a href="https://willn0tbill.github.io/PPW/" target="_blank" rel="noopener noreferrer" aria-label="Open Paw Prints Weekly website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
+                    <a href="https://github.com/Willn0tBill/PPW" target="_blank" rel="noopener noreferrer" aria-label="View Paw Prints Weekly GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
+                    <a href="./case-studies/paw-prints-weekly.html" aria-label="Read Paw Prints Weekly case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <button type="button" class="flip-close" aria-label="Return to Paw Prints Weekly preview" tabindex="-1">↶ Back to preview</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
 
