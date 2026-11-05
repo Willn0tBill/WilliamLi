@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="William Li logo">
-  <rect width="64" height="64" rx="11" fill="#101310"/>
-  <rect x="1.7" y="1.7" width="60.6" height="60.6" rx="9.3" fill="none" stroke="#c5f57a" stroke-width="1.4"/>
-  <path d="M12.8 15.5h7.3l5.3 19 5.8-17.7h5.6l5.8 17.7 5.3-19h7.3L46.9 43h-7l-5.9-17.2L28.1 43h-7Z" fill="#f1f3eb"/>
-  <rect x="29.7" y="54.1" width="4.6" height="4.6" rx="0.3" fill="#c5f57a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="William Li W monogram">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="62%" r="85%">
+      <stop offset="0%" stop-color="#2b432c"/>
+      <stop offset="100%" stop-color="#1b2a20"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="7" fill="url(#bg)"/>
+  <g fill="none" stroke="#78916b" stroke-width="0.55" opacity="0.45">
+    <circle cx="32" cy="33" r="36.6"/>
+    <circle cx="32" cy="33" r="57"/>
+  </g>
+  <path d="M8 17.8h6.4l5.8 21.9 6.1-21.9h6.2l6 22 5.9-22h6.2l-9.2 31.7h-5.8l-6.1-21.1-6.1 21.1h-5.9Z" fill="#f1f3e8"/>
+  <rect x="47.8" y="43.4" width="6.2" height="6.2" fill="#c5f57a"/>
 </svg>
