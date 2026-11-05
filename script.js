@@ -81,6 +81,24 @@
     });
   });
 
+  // Configure a real, verified HTTPS donation page here when one is available.
+  // Never add bank details, secret keys, or payment credentials to public code.
+  const DONATION_URL = '';
+  const donationLink = document.getElementById('donation-link');
+  const donationStatus = document.getElementById('donation-status');
+  if (donationLink && donationStatus && DONATION_URL.trim()) {
+    try {
+      const target = new URL(DONATION_URL);
+      if (target.protocol === 'https:' && target.hostname && !target.username && !target.password) {
+        donationLink.href = target.href;
+        donationLink.hidden = false;
+        donationStatus.textContent = 'Donations are completed on the linked provider’s website. This portfolio never handles payment information.';
+      }
+    } catch (error) {
+      // Do not show a donation button for malformed or unverified destinations.
+    }
+  }
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealElements = [...document.querySelectorAll('.reveal')];
 
