@@ -79,8 +79,8 @@
     cards.forEach(card => {
       const categoryMatch = activeFilter === 'all' ||
         (card.dataset.category || '').split(/\s+/).includes(activeFilter);
-      const name = card.querySelector('.project-title-row h3, .more-card h4')?.textContent || '';
-      const description = card.querySelector('p')?.textContent || '';
+      const name = card.querySelector('.flip-title, .project-title-row h3, .more-card h4')?.textContent || '';
+      const description = card.querySelector('.flip-description, .more-card p, p')?.textContent || '';
       const searchable = [name, description, card.dataset.category || ''].join(' ').toLocaleLowerCase();
       const match = categoryMatch && (!query || searchable.includes(query));
       card.hidden = !match;
@@ -106,6 +106,64 @@
     });
   });
   if (searchInput) searchInput.addEventListener('input', applyProjectFilter);
+
+
+  // Featured project cards use an explicit flip state so touch and keyboard users
+  // get the same content as hover users. Back-face links are never focusable while hidden.
+  const hoverCapable = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const flipCards = [...document.querySelectorAll('[data-flip-card]')];
+
+  function flipCard(card, open, focus) {
+    const front = card.querySelector('.flip-card-front');
+    const back = card.querySelector('.flip-card-back');
+    const toggle = card.querySelector('.flip-toggle');
+    const close = card.querySelector('.flip-close');
+    const backControls = [...back.querySelectorAll('a,button')];
+
+    card.classList.toggle('is-flipped', open);
+    front.setAttribute('aria-hidden', String(open));
+    back.setAttribute('aria-hidden', String(!open));
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.tabIndex = open ? -1 : 0;
+    backControls.forEach(element => element.tabIndex = open ? 0 : -1);
+
+    if (focus === 'back') {
+      const firstLink = back.querySelector('a');
+      (firstLink || close).focus({ preventScroll: true });
+    } else if (focus === 'front') {
+      toggle.focus({ preventScroll: true });
+    }
+  }
+
+  flipCards.forEach(card => {
+    const toggle = card.querySelector('.flip-toggle');
+    const close = card.querySelector('.flip-close');
+    if (!toggle || !close) return;
+
+    toggle.addEventListener('click', () => flipCard(card, true, 'back'));
+    close.addEventListener('click', () => flipCard(card, false, 'front'));
+
+    card.addEventListener('mouseenter', () => {
+      if (hoverCapable.matches) flipCard(card, true);
+    });
+    card.addEventListener('mouseleave', () => {
+      if (hoverCapable.matches && !card.contains(document.activeElement)) {
+        flipCard(card, false);
+      }
+    });
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && card.classList.contains('is-flipped')) {
+        event.preventDefault();
+        flipCard(card, false, 'front');
+      }
+    });
+    card.addEventListener('focusout', event => {
+      // Let keyboard users move through all three links without closing the card.
+      if (!card.contains(event.relatedTarget) && !card.matches(':hover')) {
+        flipCard(card, false);
+      }
+    });
+  });
 
   // Configure a real, verified HTTPS donation page here when one is available.
   // Never add bank details, secret keys, or payment credentials to public code.
