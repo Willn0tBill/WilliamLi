@@ -5,6 +5,12 @@ A personal portfolio showcasing selected websites, digital products, tools, and 
 **Repository:** https://github.com/Willn0tBill/WilliamLi  
 **GitHub Pages URL (after Pages is enabled):** https://willn0tbill.github.io/WilliamLi/
 
+## Project coverage
+
+The site now lists **10 public repositories**: five featured projects (ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly) and five additional projects (Wtv Innovations, SwiftSupply, New Republic Network, NRE Empire, Li's Trees and Fruits).
+
+Private and local-only projects are intentionally omitted from the public-facing site until suitable public descriptions or permissions are available. Project filters support multiple categories per card.
+
 ## What's included
 
 - An editorial-style, responsive homepage with original CSS-drawn project artwork.
