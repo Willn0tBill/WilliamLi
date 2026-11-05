@@ -15,11 +15,15 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./polish.css?v=1">
   <link rel="stylesheet" href="./flip-cards.css?v=2">
+  <link rel="stylesheet" href="./enhancements.css?v=1">
   <script src="./script.js?v=flip1" defer></script>
+  <script src="./enhancements.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <nav class="nav wrap" aria-label="Main navigation">
@@ -111,14 +115,24 @@
         </div>
         <label class="project-search-label">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
-          <input id="project-search" type="search" placeholder="Search projects..." aria-label="Search portfolio projects" autocomplete="off">
+          <input id="project-search" type="search" placeholder="Search projects, skills, or topics..." aria-label="Search portfolio projects" autocomplete="off">
+          <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </label>
       </div>
-      <p class="project-results" id="project-results" role="status" aria-live="polite">Showing 10 projects</p>
-      <div class="no-results" id="no-results" hidden>No matching projects. Try another keyword or choose “All work”.</div>
+      <div class="project-discover-row">
+        <p class="project-results" id="project-results" role="status" aria-live="polite">Showing 10 projects</p>
+        <div class="project-quick-search" aria-label="Quick searches">
+          <span>Try:</span>
+          <button type="button" data-quick-search="JavaScript">JavaScript</button>
+          <button type="button" data-quick-search="Business">Business</button>
+          <button type="button" data-quick-search="Community">Community</button>
+          <button type="button" id="clear-project-search" hidden>Clear search ×</button>
+        </div>
+      </div>
+      <div class="no-results" id="no-results" hidden>No matching projects. <button type="button" id="reset-project-filters">Show all projects</button></div>
       <p class="flip-intro-hint" id="flip-help"><strong>Featured projects</strong> — hover to explore, or tap / press Enter to flip each card.</p>
       <div class="project-grid">
-        <article class="project-card flip-project-card reveal" data-category="games" data-project="profitlands">
+        <article class="project-card flip-project-card reveal" data-category="games" data-project="profitlands" data-tags="JavaScript simulation games business inventory strategy">
           <div class="flip-card" data-flip-card>
             <div class="flip-card-inner">
               <div class="flip-card-face flip-card-front" id="preview-profitlands" aria-hidden="false">
@@ -141,6 +155,7 @@
                     <a href="https://willn0tbill.github.io/ProfitLands/" target="_blank" rel="noopener noreferrer" aria-label="Open ProfitLands website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
                     <a href="https://github.com/Willn0tBill/ProfitLands" target="_blank" rel="noopener noreferrer" aria-label="View ProfitLands GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
                     <a href="./case-studies/profitlands.html" aria-label="Read ProfitLands case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="flip-preview-link" data-preview="profitlands" tabindex="-1" aria-label="Preview ProfitLands screenshot">Preview <span aria-hidden="true">↗</span></button>
                   </div>
                   <button type="button" class="flip-close" aria-label="Return to ProfitLands preview" tabindex="-1">↶ Back to preview</button>
                 </div>
@@ -149,7 +164,7 @@
           </div>
         </article>
 
-        <article class="project-card flip-project-card reveal" data-category="tools" data-project="swiftsupply-ops">
+        <article class="project-card flip-project-card reveal" data-category="tools" data-project="swiftsupply-ops" data-tags="JavaScript Supabase PWA business inventory workflow">
           <div class="flip-card" data-flip-card>
             <div class="flip-card-inner">
               <div class="flip-card-face flip-card-front" id="preview-swiftsupply-ops" aria-hidden="false">
@@ -172,6 +187,7 @@
                     <a href="https://willn0tbill.github.io/SwiftSupplyOps/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply Ops website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
                     <a href="https://github.com/Willn0tBill/SwiftSupplyOps" target="_blank" rel="noopener noreferrer" aria-label="View SwiftSupply Ops GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
                     <a href="./case-studies/swiftsupply-ops.html" aria-label="Read SwiftSupply Ops case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="flip-preview-link" data-preview="swiftsupply-ops" tabindex="-1" aria-label="Preview SwiftSupply Ops screenshot">Preview <span aria-hidden="true">↗</span></button>
                   </div>
                   <button type="button" class="flip-close" aria-label="Return to SwiftSupply Ops preview" tabindex="-1">↶ Back to preview</button>
                 </div>
@@ -180,7 +196,7 @@
           </div>
         </article>
 
-        <article class="project-card flip-project-card reveal" data-category="websites community" data-project="troop710">
+        <article class="project-card flip-project-card reveal" data-category="websites community" data-project="troop710" data-tags="HTML CSS JavaScript accessibility community scouting resources">
           <div class="flip-card" data-flip-card>
             <div class="flip-card-inner">
               <div class="flip-card-face flip-card-front" id="preview-troop710" aria-hidden="false">
@@ -203,6 +219,7 @@
                     <a href="https://willn0tbill.github.io/Troop710/" target="_blank" rel="noopener noreferrer" aria-label="Open Troop 710 website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
                     <a href="https://github.com/Willn0tBill/Troop710" target="_blank" rel="noopener noreferrer" aria-label="View Troop 710 GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
                     <a href="./case-studies/troop710.html" aria-label="Read Troop 710 case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="flip-preview-link" data-preview="troop710" tabindex="-1" aria-label="Preview Troop 710 screenshot">Preview <span aria-hidden="true">↗</span></button>
                   </div>
                   <button type="button" class="flip-close" aria-label="Return to Troop 710 preview" tabindex="-1">↶ Back to preview</button>
                 </div>
@@ -211,7 +228,7 @@
           </div>
         </article>
 
-        <article class="project-card flip-project-card reveal" data-category="games" data-project="nationwars">
+        <article class="project-card flip-project-card reveal" data-category="games" data-project="nationwars" data-tags="JavaScript gaming interactive systems strategy simulation">
           <div class="flip-card" data-flip-card>
             <div class="flip-card-inner">
               <div class="flip-card-face flip-card-front" id="preview-nationwars" aria-hidden="false">
@@ -234,6 +251,7 @@
                     <a href="https://willn0tbill.github.io/NationWars/" target="_blank" rel="noopener noreferrer" aria-label="Open NationWars website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
                     <a href="https://github.com/Willn0tBill/NationWars" target="_blank" rel="noopener noreferrer" aria-label="View NationWars GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
                     <a href="./case-studies/nationwars.html" aria-label="Read NationWars case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="flip-preview-link" data-preview="nationwars" tabindex="-1" aria-label="Preview NationWars screenshot">Preview <span aria-hidden="true">↗</span></button>
                   </div>
                   <button type="button" class="flip-close" aria-label="Return to NationWars preview" tabindex="-1">↶ Back to preview</button>
                 </div>
@@ -242,7 +260,7 @@
           </div>
         </article>
 
-        <article class="project-card flip-project-card reveal project-card-wide" data-category="websites community" data-project="paw-prints-weekly">
+        <article class="project-card flip-project-card reveal project-card-wide" data-category="websites community" data-project="paw-prints-weekly" data-tags="JavaScript web editorial publishing community news">
           <div class="flip-card" data-flip-card>
             <div class="flip-card-inner">
               <div class="flip-card-face flip-card-front" id="preview-paw-prints-weekly" aria-hidden="false">
@@ -265,6 +283,7 @@
                     <a href="https://willn0tbill.github.io/PPW/" target="_blank" rel="noopener noreferrer" aria-label="Open Paw Prints Weekly website" tabindex="-1">Website <span aria-hidden="true">↗</span></a>
                     <a href="https://github.com/Willn0tBill/PPW" target="_blank" rel="noopener noreferrer" aria-label="View Paw Prints Weekly GitHub repository" tabindex="-1">GitHub <span aria-hidden="true">↗</span></a>
                     <a href="./case-studies/paw-prints-weekly.html" aria-label="Read Paw Prints Weekly case study" tabindex="-1">Case study <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="flip-preview-link" data-preview="paw-prints-weekly" tabindex="-1" aria-label="Preview Paw Prints Weekly screenshot">Preview <span aria-hidden="true">↗</span></button>
                   </div>
                   <button type="button" class="flip-close" aria-label="Return to Paw Prints Weekly preview" tabindex="-1">↶ Back to preview</button>
                 </div>
@@ -283,7 +302,7 @@
           <p>Different ideas, audiences, and use cases — all part of the process of building and learning.</p>
         </div>
         <div class="more-work-grid">
-          <article class="more-card reveal" data-category="websites tools">
+          <article class="more-card reveal" data-category="websites tools" data-tags="JavaScript studio websites games products business">
             <div class="more-card-top">
               <div class="more-card-symbol more-symbol-wtvi" aria-hidden="true"><span>Wtv<span class="symbol-highlight">I</span></span><i></i></div>
               <div class="more-card-number">06 / 10</div>
@@ -292,9 +311,9 @@
             <div class="more-card-category">STUDIO WEBSITE / DIGITAL PRODUCTS</div>
             <h4>Wtv Innovations</h4>
             <p>A creative studio hub for games, software, web experiences, and projects under the Wtv Innovations name.</p>
-            <div class="more-card-links"><a href="https://willn0tbill.github.io/WtvStudios/" target="_blank" rel="noopener noreferrer" aria-label="Open Wtv Innovations website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/WtvStudios" target="_blank" rel="noopener noreferrer" aria-label="View Wtv Innovations on GitHub">GitHub <span aria-hidden="true">↗</span></a><a href="./case-studies/wtv-innovations.html">Case study <span aria-hidden="true">↗</span></a></div>
+            <div class="more-card-links"><a href="https://willn0tbill.github.io/WtvStudios/" target="_blank" rel="noopener noreferrer" aria-label="Open Wtv Innovations website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/WtvStudios" target="_blank" rel="noopener noreferrer" aria-label="View Wtv Innovations on GitHub">GitHub <span aria-hidden="true">↗</span></a><a href="./case-studies/wtv-innovations.html">Case study <span aria-hidden="true">↗</span></a><button type="button" class="archive-preview-link" data-preview="wtvi" aria-label="Preview Wtv Innovations screenshot">Preview <span aria-hidden="true">↗</span></button></div>
           </article>
-          <article class="more-card reveal" data-category="websites tools">
+          <article class="more-card reveal" data-category="websites tools" data-tags="JavaScript business ecommerce storefront products">
             <div class="more-card-top">
               <div class="more-card-symbol more-symbol-swift" aria-hidden="true"><span>SS<span class="symbol-highlight">.</span></span><i></i></div>
               <div class="more-card-number">07 / 10</div>
@@ -303,9 +322,9 @@
             <div class="more-card-category">BUSINESS WEBSITE / ORDERING</div>
             <h4>SwiftSupply</h4>
             <p>A customer-facing website built around browsing products, placing orders, and discovering local business services.</p>
-            <div class="more-card-links"><a href="https://willn0tbill.github.io/SwiftSupply/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/SwiftSupply" target="_blank" rel="noopener noreferrer" aria-label="View SwiftSupply on GitHub">GitHub <span aria-hidden="true">↗</span></a><a href="./case-studies/swiftsupply.html">Case study <span aria-hidden="true">↗</span></a></div>
+            <div class="more-card-links"><a href="https://willn0tbill.github.io/SwiftSupply/" target="_blank" rel="noopener noreferrer" aria-label="Open SwiftSupply website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/SwiftSupply" target="_blank" rel="noopener noreferrer" aria-label="View SwiftSupply on GitHub">GitHub <span aria-hidden="true">↗</span></a><a href="./case-studies/swiftsupply.html">Case study <span aria-hidden="true">↗</span></a><button type="button" class="archive-preview-link" data-preview="swiftsupply" aria-label="Preview SwiftSupply screenshot">Preview <span aria-hidden="true">↗</span></button></div>
           </article>
-          <article class="more-card reveal" data-category="websites community">
+          <article class="more-card reveal" data-category="websites community" data-tags="community publishing gaming network websites">
             <div class="more-card-top">
               <div class="more-card-symbol more-symbol-nrn" aria-hidden="true"><span>NR<span class="symbol-highlight">N</span></span><i></i></div>
               <div class="more-card-number">08 / 10</div>
@@ -314,9 +333,9 @@
             <div class="more-card-category">COMMUNITY / PUBLISHING</div>
             <h4>New Republic Network</h4>
             <p>A community information hub combining news, games, awards, and editorial content within a shared platform.</p>
-            <div class="more-card-links"><a href="https://willn0tbill.github.io/NRN/" target="_blank" rel="noopener noreferrer" aria-label="Open New Republic Network website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/NRN" target="_blank" rel="noopener noreferrer" aria-label="View New Republic Network on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+            <div class="more-card-links"><a href="https://willn0tbill.github.io/NRN/" target="_blank" rel="noopener noreferrer" aria-label="Open New Republic Network website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/NRN" target="_blank" rel="noopener noreferrer" aria-label="View New Republic Network on GitHub">GitHub <span aria-hidden="true">↗</span></a><button type="button" class="archive-preview-link" data-preview="nrn" aria-label="Preview New Republic Network screenshot">Preview <span aria-hidden="true">↗</span></button></div>
           </article>
-          <article class="more-card reveal" data-category="websites community">
+          <article class="more-card reveal" data-category="websites community" data-tags="community organization websites gaming network">
             <div class="more-card-top">
               <div class="more-card-symbol more-symbol-nre" aria-hidden="true"><span>NRE<span class="symbol-highlight">.</span></span><i></i></div>
               <div class="more-card-number">09 / 10</div>
@@ -325,9 +344,9 @@
             <div class="more-card-category">COMMUNITY / ORGANIZATION</div>
             <h4>NRE Empire</h4>
             <p>An organization website with structured sections for its community, groups, programs, and related projects.</p>
-            <div class="more-card-links"><a href="https://willn0tbill.github.io/NRE/" target="_blank" rel="noopener noreferrer" aria-label="Open NRE Empire website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/NRE" target="_blank" rel="noopener noreferrer" aria-label="View NRE Empire on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+            <div class="more-card-links"><a href="https://willn0tbill.github.io/NRE/" target="_blank" rel="noopener noreferrer" aria-label="Open NRE Empire website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/NRE" target="_blank" rel="noopener noreferrer" aria-label="View NRE Empire on GitHub">GitHub <span aria-hidden="true">↗</span></a><button type="button" class="archive-preview-link" data-preview="nre" aria-label="Preview NRE Empire screenshot">Preview <span aria-hidden="true">↗</span></button></div>
           </article>
-          <article class="more-card reveal" data-category="websites">
+          <article class="more-card reveal" data-category="websites" data-tags="small business fruit plants local commerce website">
             <div class="more-card-top">
               <div class="more-card-symbol more-symbol-fruit" aria-hidden="true"><span>Li<span class="symbol-highlight">’s</span></span><i></i></div>
               <div class="more-card-number">10 / 10</div>
@@ -336,7 +355,7 @@
             <div class="more-card-category">SMALL-BUSINESS WEBSITE</div>
             <h4>Li’s Trees &amp; Fruits</h4>
             <p>A straightforward business website presenting fruit and tree offerings with product and support navigation.</p>
-            <div class="more-card-links"><a href="https://willn0tbill.github.io/Li-s-Trees-and-Fruits/" target="_blank" rel="noopener noreferrer" aria-label="Open Li’s Trees & Fruits website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/Li-s-Trees-and-Fruits" target="_blank" rel="noopener noreferrer" aria-label="View Li’s Trees & Fruits on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
+            <div class="more-card-links"><a href="https://willn0tbill.github.io/Li-s-Trees-and-Fruits/" target="_blank" rel="noopener noreferrer" aria-label="Open Li’s Trees & Fruits website">Website <span aria-hidden="true">↗</span></a><a href="https://github.com/Willn0tBill/Li-s-Trees-and-Fruits" target="_blank" rel="noopener noreferrer" aria-label="View Li’s Trees & Fruits on GitHub">GitHub <span aria-hidden="true">↗</span></a><button type="button" class="archive-preview-link" data-preview="li-fruits" aria-label="Preview Li’s Trees and Fruits screenshot">Preview <span aria-hidden="true">↗</span></button></div>
           </article>
         </div>
       </div>
@@ -400,6 +419,23 @@
       </div>
     </section>
   </main>
+  <dialog id="project-preview-dialog" class="project-preview-dialog" aria-labelledby="preview-dialog-title" aria-describedby="preview-dialog-description">
+    <div class="preview-dialog-layout">
+      <header class="preview-dialog-header">
+        <div><span class="preview-dialog-eyebrow">WORK / GALLERY</span><h2 id="preview-dialog-title">Project screenshot</h2></div>
+        <button type="button" id="preview-dialog-close" class="preview-dialog-close" aria-label="Close screenshot viewer">Close <span aria-hidden="true">×</span></button>
+      </header>
+      <figure class="preview-dialog-figure">
+        <img id="preview-dialog-image" alt="" width="1120" height="718">
+        <figcaption id="preview-dialog-description">Actual public website screenshot · November 2026</figcaption>
+      </figure>
+      <div class="preview-dialog-bottom">
+        <div class="preview-dialog-paging"><button type="button" id="preview-prev" aria-label="Previous project screenshot">← Previous</button><span id="preview-dialog-count" aria-live="polite">01 / 10</span><button type="button" id="preview-next" aria-label="Next project screenshot">Next →</button></div>
+        <a href="#" id="preview-visit-link" target="_blank" rel="noopener noreferrer">Visit project ↗</a>
+      </div>
+    </div>
+  </dialog>
+  <a href="#top" id="back-to-top" class="back-to-top" aria-label="Back to top">↑ <span>Back to top</span></a>
   <footer class="site-footer"><div class="wrap footer-inner"><a href="#top" class="footer-brand">WL<span>.</span></a><span>DESIGNED & BUILT WITH INTENTION.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
 </body>
 </html>
