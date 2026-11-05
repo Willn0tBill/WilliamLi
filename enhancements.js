@@ -12,6 +12,8 @@
   const galleryCaption = document.getElementById('preview-dialog-description');
   const galleryCount = document.getElementById('preview-dialog-count');
   const gallerySite = document.getElementById('preview-visit-link');
+  const galleryGithub = document.getElementById('preview-github-link');
+  const galleryCase = document.getElementById('preview-case-link');
   const closeButton = document.getElementById('preview-dialog-close');
   const prevButton = document.getElementById('preview-prev');
   const nextButton = document.getElementById('preview-next');
@@ -78,6 +80,9 @@
     const website = [...card.querySelectorAll('a[href]')].find(a =>
       /^https:\/\/willn0tbill\.github\.io\//i.test(a.href))?.href;
     if (!website) return null;
+    const github = [...card.querySelectorAll('a[href]')].find(a =>
+      /^https:\/\/github\.com\/Willn0tBill\/[^/?#]+/i.test(a.href))?.href || '';
+    const caseLink = card.querySelector('a[href^="./case-studies/"]')?.getAttribute('href') || '';
     return {
       button: item,
       card,
@@ -85,6 +90,8 @@
       image: img.getAttribute('src'),
       alt: img.alt,
       website,
+      github,
+      caseLink,
       isPrivateFront: card.dataset.project === 'swiftsupply-ops'
     };
   }
@@ -108,6 +115,16 @@
       String(galleryEntries.length).padStart(2,'0');
     gallerySite.href = item.website;
     gallerySite.setAttribute('aria-label','Open ' + item.title + ' website');
+    if (galleryGithub) {
+      galleryGithub.href = item.github || '#';
+      galleryGithub.hidden = !item.github;
+      galleryGithub.setAttribute('aria-label', 'View ' + item.title + ' source on GitHub');
+    }
+    if (galleryCase) {
+      galleryCase.href = item.caseLink || '#';
+      galleryCase.hidden = !item.caseLink;
+      galleryCase.setAttribute('aria-label', 'Read ' + item.title + ' case study');
+    }
   }
 
   function openGallery(button) {
