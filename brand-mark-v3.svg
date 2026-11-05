@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="William Li logo">
+  <rect width="64" height="64" rx="11" fill="#101310"/>
+  <rect x="1.7" y="1.7" width="60.6" height="60.6" rx="9.3" fill="none" stroke="#c5f57a" stroke-width="1.4"/>
+  <path d="M12.8 15.5h7.3l5.3 19 5.8-17.7h5.6l5.8 17.7 5.3-19h7.3L46.9 43h-7l-5.9-17.2L28.1 43h-7Z" fill="#f1f3eb"/>
+  <rect x="29.7" y="54.1" width="4.6" height="4.6" rx="0.3" fill="#c5f57a"/>
+</svg>
