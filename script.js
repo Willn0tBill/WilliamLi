@@ -81,7 +81,7 @@
         (card.dataset.category || '').split(/\s+/).includes(activeFilter);
       const name = card.querySelector('.flip-title, .project-title-row h3, .more-card h4')?.textContent || '';
       const description = card.querySelector('.flip-description, .more-card p, p')?.textContent || '';
-      const searchable = [name, description, card.dataset.category || ''].join(' ').toLocaleLowerCase();
+      const searchable = [name, description, card.dataset.category || '', card.dataset.tags || ''].join(' ').toLocaleLowerCase();
       const match = categoryMatch && (!query || searchable.includes(query));
       card.hidden = !match;
       if (match) shown++;
