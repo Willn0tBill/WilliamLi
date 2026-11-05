@@ -67,19 +67,45 @@
     });
   }
 
+  const searchInput = document.getElementById('project-search');
+  const resultsText = document.getElementById('project-results');
+  const noResults = document.getElementById('no-results');
+  const moreWork = document.getElementById('more-work');
+  let activeFilter = 'all';
+
+  function applyProjectFilter() {
+    const query = searchInput?.value.trim().toLocaleLowerCase() || '';
+    let shown = 0;
+    cards.forEach(card => {
+      const categoryMatch = activeFilter === 'all' ||
+        (card.dataset.category || '').split(/\s+/).includes(activeFilter);
+      const name = card.querySelector('.project-title-row h3, .more-card h4')?.textContent || '';
+      const description = card.querySelector('p')?.textContent || '';
+      const searchable = [name, description, card.dataset.category || ''].join(' ').toLocaleLowerCase();
+      const match = categoryMatch && (!query || searchable.includes(query));
+      card.hidden = !match;
+      if (match) shown++;
+    });
+    if (moreWork) {
+      const archiveCards = [...moreWork.querySelectorAll('.more-card')];
+      moreWork.hidden = archiveCards.length > 0 && archiveCards.every(card => card.hidden);
+    }
+    if (resultsText) resultsText.textContent = 'Showing ' + shown + (shown === 1 ? ' project' : ' projects');
+    if (noResults) noResults.hidden = shown !== 0;
+  }
+
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
+      activeFilter = button.dataset.filter || 'all';
       filterButtons.forEach(item => {
         const active = item === button;
         item.classList.toggle('is-active', active);
         item.setAttribute('aria-pressed', String(active));
       });
-      cards.forEach(card => {
-        card.hidden = filter !== 'all' && !card.dataset.category.split(/\s+/).includes(filter);
-      });
+      applyProjectFilter();
     });
   });
+  if (searchInput) searchInput.addEventListener('input', applyProjectFilter);
 
   // Configure a real, verified HTTPS donation page here when one is available.
   // Never add bank details, secret keys, or payment credentials to public code.
