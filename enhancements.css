@@ -244,3 +244,33 @@
   .back-to-top, .flip-back-links .flip-preview-link,.more-card-links .archive-preview-link { transition: none!important; }
   .project-preview-dialog::backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
+
+
+/* All relevant project destinations remain available while examining a screenshot. */
+.preview-dialog-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.preview-dialog-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 39px;
+  border-radius: 5px;
+  padding: 10px 13px;
+  background: #263428;
+  color: #e7f0e4;
+  border: 1px solid #4d624e;
+  font: 700 11px var(--font);
+  text-decoration: none;
+}
+.preview-dialog-actions a:hover,
+.preview-dialog-actions a:focus-visible { border-color: #c5f57a; }
+.preview-dialog-actions a:last-child {
+  background: #c5f57a;
+  color: #152412;
+  border-color: #c5f57a;
+}
+.preview-dialog-actions a:last-child:hover { filter: brightness(.92); }
+.preview-dialog-actions a[hidden] { display: none!important; }
+@media(max-width:720px) {
+  .preview-dialog-actions { width:100%; }
+  .preview-dialog-actions a { flex: 1 1 auto; }
+}
