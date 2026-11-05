@@ -113,3 +113,47 @@
   .music-page-end { padding:65px 0; }
 }
 @media(prefers-reduced-motion:reduce) { .music-highlight-cta,.music-page-cta { transition:none!important; } }
+
+
+/* Released music: streaming destinations and original abstract artwork. */
+.music-release-section { background:var(--section-alt); }
+.music-stream-platforms { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-bottom:26px; }
+.music-stream-platforms a {
+  display:grid; grid-template-columns:46px minmax(0,1fr) 18px; align-items:center; gap:16px;
+  background:var(--bg); border:1px solid var(--border); border-radius:9px;
+  padding:22px; min-width:0; transition:border-color .2s,transform .2s;
+}
+.music-stream-platforms a:hover,.music-stream-platforms a:focus-visible { border-color:var(--accent); transform:translateY(-2px); }
+.music-stream-platforms .music-stream-symbol { display:grid; place-items:center; width:46px; height:46px; color:var(--accent); background:var(--surface-2); border-radius:50%; font-size:27px; line-height:1; }
+.music-stream-platforms strong { display:block; font-size:15px; font-weight:700; letter-spacing:-.035em; }
+.music-stream-platforms small { display:block; color:var(--muted); font-size:11px; line-height:1.6; margin-top:5px; }
+.music-stream-platforms .music-stream-arrow { font-size:18px; color:var(--accent); justify-self:end; }
+.music-release-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+.music-release-card { min-width:0; display:flex; flex-direction:column; background:var(--bg); border:1px solid var(--border); border-radius:9px; padding:16px; transition:transform .24s,border-color .24s; }
+.music-release-card:hover,.music-release-card:focus-visible { transform:translateY(-4px); border-color:var(--accent); }
+.music-release-number { color:var(--quiet); font:10px var(--mono); letter-spacing:.06em; margin-bottom:12px; }
+.music-release-visual { position:relative; display:grid; place-items:center; isolation:isolate; width:100%; aspect-ratio:1; border-radius:6px; overflow:hidden; }
+.music-release-visual:before,.music-release-visual:after { content:""; display:block; position:absolute; border-radius:50%; border:1px solid #ffffff4e; width:75%; height:75%; left:12%; top:11%; }
+.music-release-visual:after { width:108%; height:108%; left:-4%; top:-4%; opacity:.55; }
+.music-release-visual i { position:absolute; inset:12%; border:1px dashed #ffffff29; transform:rotate(15deg); }
+.music-release-visual b { z-index:1; color:#fbf9f0; font-size:clamp(37px,5vw,70px); line-height:1; letter-spacing:-.09em; }
+.visual-rain { background:radial-gradient(circle at 68% 32%,#779f82,#284859 64%,#182c3c); }
+.visual-detroit { background:radial-gradient(circle at 32% 76%,#d0a078,#6c4a46 65%,#322a31); }
+.visual-elegance { background:radial-gradient(circle at 78% 16%,#b0a59a,#595d67 65%,#2d3342); }
+.visual-murmurs { background:radial-gradient(circle at 26% 35%,#86858f,#403d50 68%,#28273c); }
+.music-release-card h3 { margin:15px 0 14px; font-size:clamp(17px,1.7vw,23px); letter-spacing:-.04em; line-height:1.3; }
+.music-release-footer { color:var(--muted); display:flex; justify-content:space-between; margin-top:auto; padding-top:13px; border-top:1px solid var(--border-soft); font:10px var(--mono); }
+.music-release-footer span { color:var(--accent); font-size:15px; }
+.music-release-note { font:10px/1.75 var(--mono); color:var(--quiet); margin:23px 0 0; }
+@media(max-width:920px) { .music-release-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) {
+ .music-stream-platforms { grid-template-columns:1fr; }
+ .music-stream-platforms a { padding:16px; gap:12px; }
+ .music-release-grid { gap:10px; }
+ .music-release-card { padding:12px; }
+ .music-release-card h3 { font-size:17px; }
+ .music-release-visual b { font-size:45px; }
+ .music-release-number,.music-release-footer { font-size:9px; }
+}
+@media(max-width:370px) { .music-release-grid { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce) { .music-stream-platforms a,.music-release-card { transition:none!important; } }
