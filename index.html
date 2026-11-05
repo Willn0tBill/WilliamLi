@@ -100,13 +100,21 @@
         <div><div class="section-kicker"><span>01</span> / WORK</div><h2 id="work-heading">Selected <em>projects.</em></h2></div>
         <p>Websites, applications, and experiments — built across different needs and audiences.</p>
       </div>
-      <div class="filter-row reveal" role="group" aria-label="Filter projects">
-        <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work <span>10</span></button>
-        <button class="filter-button" type="button" data-filter="games" aria-pressed="false">Games</button>
-        <button class="filter-button" type="button" data-filter="tools" aria-pressed="false">Tools</button>
-        <button class="filter-button" type="button" data-filter="websites" aria-pressed="false">Websites</button>
-        <button class="filter-button" type="button" data-filter="community" aria-pressed="false">Community</button>
+      <div class="work-controls reveal">
+        <div class="filter-row" role="group" aria-label="Filter projects">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work <span>10</span></button>
+          <button class="filter-button" type="button" data-filter="games" aria-pressed="false">Games</button>
+          <button class="filter-button" type="button" data-filter="tools" aria-pressed="false">Tools</button>
+          <button class="filter-button" type="button" data-filter="websites" aria-pressed="false">Websites</button>
+          <button class="filter-button" type="button" data-filter="community" aria-pressed="false">Community</button>
+        </div>
+        <label class="project-search-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+          <input id="project-search" type="search" placeholder="Search projects..." aria-label="Search portfolio projects" autocomplete="off">
+        </label>
       </div>
+      <p class="project-results" id="project-results" role="status" aria-live="polite">Showing 10 projects</p>
+      <div class="no-results" id="no-results" hidden>No matching projects. Try another keyword or choose “All work”.</div>
       <div class="project-grid">
         <article class="project-card reveal" data-category="games">
           <a class="project-visual visual-profit" href="https://willn0tbill.github.io/ProfitLands/" target="_blank" rel="noopener noreferrer" aria-label="Open ProfitLands website">
