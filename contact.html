@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#101310">
+  <meta name="description" content="Contact William Li about websites, digital products, creative collaboration, and project feedback.">
+  <meta property="og:title" content="Contact — William Li">
+  <meta property="og:description" content="Discuss a website, application, or creative project with William Li.">
+  <title>Contact & Project Inquiries | William Li</title>
+  <link rel="icon" type="image/svg+xml" href="./brand-mark-v4.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./polish.css">
+  <link rel="stylesheet" href="./contact.css">
+  <script src="./script.js" defer></script>
+  <script src="./contact.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="./index.html" aria-label="William Li, home">
+        <span class="brand-mark" aria-hidden="true"><img src="./brand-mark-v4.svg" alt="" width="43" height="43"></span>
+        <span class="brand-name">WILLIAM LI<span class="brand-divider">/</span>PORTFOLIO</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="./index.html#work">Projects</a><a href="./index.html#about">About</a><a href="./index.html#expertise">Expertise</a><a href="./index.html#support">Support</a>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" title="Toggle appearance">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.7A8.9 8.9 0 0 1 8.3 3.8 9 9 0 1 0 20.2 15.7Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
+        <a class="nav-cta" href="https://github.com/Willn0tBill" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="contact-page-main">
+    <section class="contact-hero wrap" aria-labelledby="contact-heading">
+      <div class="contact-kicker"><i aria-hidden="true"></i> CONTACT / PROJECT INQUIRIES</div>
+      <h1 id="contact-heading">Have an idea?<br><em>Let's build it.</em></h1>
+      <p>Whether you're exploring a website, a practical app, or a creative collaboration, start with the essentials and a clear brief.</p>
+    </section>
+    <section class="inquiry-section" id="inquiry" aria-label="Project inquiry form">
+      <div class="wrap inquiry-grid">
+        <div class="inquiry-card">
+          <div class="inquiry-top"><span>01 / TELL ME ABOUT IT</span><span>NO ACCOUNT REQUIRED TO DRAFT</span></div>
+          <h2>Project inquiry</h2>
+          <p>This form prepares a public GitHub issue draft. It does not submit anything automatically, and it does not collect email addresses or payment information.</p>
+          <form id="inquiry-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="kind">What is this about? *</label>
+                <select id="kind" name="kind" required>
+                  <option value="">Choose a project type</option>
+                  <option>Website or redesign</option>
+                  <option>Application or business tool</option>
+                  <option>Game or interactive experience</option>
+                  <option>UI / UX collaboration</option>
+                  <option>General feedback or other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="timeline">Preferred timeframe</label>
+                <select id="timeline" name="timeline">
+                  <option>Flexible / exploring</option>
+                  <option>Within the next month</option>
+                  <option>Within one to three months</option>
+                  <option>Later this year</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="subject">Project title or subject *</label>
+              <input id="subject" type="text" name="subject" minlength="5" maxlength="80" placeholder="e.g. Website refresh for a local business" autocomplete="off" required>
+              <small>Make it clear and specific, without sharing private details.</small>
+            </div>
+            <div class="form-field">
+              <label for="overview">What are you trying to accomplish? *</label>
+              <textarea id="overview" name="overview" minlength="20" maxlength="900" placeholder="Describe the idea, the audience, and what you'd like the finished experience to do." required></textarea>
+              <small><span id="overview-count">0</span>/900 characters</small>
+            </div>
+            <div class="form-field">
+              <label for="reference">Public project or inspiration URL (optional)</label>
+              <input id="reference" name="reference" type="url" inputmode="url" maxlength="220" placeholder="https://example.com">
+              <small>Link to a public website only. Do not include a private document or account link.</small>
+            </div>
+            <div class="public-warning">
+              <strong>Important: GitHub issues are public.</strong>
+              <p>Don't include personal email addresses, phone numbers, addresses, passwords, customer information, or confidential business details. You'll review the issue before posting it. A GitHub account is required to submit.</p>
+            </div>
+            <label class="confirm-line"><input id="public-confirm" type="checkbox" required><span>I understand this creates a public draft and I will not include personal or confidential information.</span></label>
+            <div class="inquiry-actions">
+              <button type="submit" class="inquiry-submit">Review on GitHub <span aria-hidden="true">↗</span></button>
+              <button type="button" class="inquiry-copy" id="copy-inquiry">Copy inquiry</button>
+            </div>
+            <div class="inquiry-feedback" id="inquiry-feedback" role="status" aria-live="polite">No message has been sent.</div>
+          </form>
+        </div>
+        <aside class="contact-side" aria-label="Other ways to connect">
+          <div class="contact-info-card is-accent">
+            <span>02 / SEE THE WORK</span>
+            <h3>Explore before reaching out.</h3>
+            <p>Take a closer look at the published project websites, public code, and detailed case studies.</p>
+            <a href="./index.html#work">Browse projects <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-info-card">
+            <span>03 / FOLLOW ALONG</span>
+            <h3>Find me on GitHub.</h3>
+            <p>Browse ongoing development, star a project, or check for new updates. For non-public matters, avoid publishing personal details in GitHub issues.</p>
+            <a href="https://github.com/Willn0tBill" target="_blank" rel="noopener noreferrer">Open GitHub profile <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-scope">
+            <span>AREAS OF INTEREST</span>
+            <ul><li>Website design and development</li><li>Business tools and workflows</li><li>Interfaces, interaction, and usability</li><li>Games and experimental software</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <div class="wrap contact-bottom-bar"><span>THOUGHTFUL PROJECTS START WITH A CLEAR BRIEF.</span><a href="./index.html">BACK TO PORTFOLIO ↑</a></div>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a href="./index.html" class="footer-brand">WL<span>.</span></a><span>DESIGNED & BUILT WITH INTENTION.</span><a href="./index.html#work">EXPLORE WORK ↗</a></div></footer>
+</body>
+</html>
