@@ -76,7 +76,7 @@
         item.setAttribute('aria-pressed', String(active));
       });
       cards.forEach(card => {
-        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+        card.hidden = filter !== 'all' && !card.dataset.category.split(/\s+/).includes(filter);
       });
     });
   });
