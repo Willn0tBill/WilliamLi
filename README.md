@@ -21,20 +21,20 @@ Project preview visuals are **illustrations**, not screenshots or assertions of 
 
 | File | Purpose |
 | --- | --- |
-| \`index.html\` | Page content and accessible structure |
-| \`styles.css\` | Layout, responsive design, themes, and illustrations |
-| \`script.js\` | Appearance toggle, menu, filters, scroll reveals |
-| \`favicon.svg\` | Site icon |
+| `index.html` | Page content and accessible structure |
+| `styles.css` | Layout, responsive design, themes, and illustrations |
+| `script.js` | Appearance toggle, menu, filters, scroll reveals |
+| `favicon.svg` | Site icon |
 
 ## Preview locally
 
-Open \`index.html\` in a browser. No installation is required. For a local development server, run:
+Open `index.html` in a browser. No installation is required. For a local development server, run:
 
-\`\`\`bash
+```bash
 python -m http.server 8000
-\`\`\`
+```
 
-Then visit \`http://localhost:8000\`.
+Then visit `http://localhost:8000`.
 
 ## Publish for free using GitHub Pages
 
@@ -43,13 +43,13 @@ Then visit \`http://localhost:8000\`.
 3. Select **main**, folder **/(root)**, then **Save**.
 4. After GitHub completes the deployment, use the **Visit site** button or open https://willn0tbill.github.io/WilliamLi/.
 
-When you push changes to \`main\`, GitHub Pages will redeploy automatically.
+When you push changes to `main`, GitHub Pages will redeploy automatically.
 
 ## Customization
 
-- Change headings, introduction, project descriptions, and links in \`index.html\`.
-- Adjust the color palette through the CSS variables at the top of \`styles.css\`.
-- Add another project by copying a \`.project-card\` and setting its \`data-category\` to \`games\`, \`tools\`, or \`websites\`. Update the displayed total in the "All work" filter.
+- Change headings, introduction, project descriptions, and links in `index.html`.
+- Adjust the color palette through the CSS variables at the top of `styles.css`.
+- Add another project by copying a `.project-card` and setting its `data-category` to `games`, `tools`, or `websites`. Update the displayed total in the "All work" filter.
 - Replace the illustrated project previews with your own genuine screenshots whenever available.
 - The contact area currently links to GitHub and intentionally doesn't publish personal contact details.
 
