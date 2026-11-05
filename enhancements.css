@@ -1,0 +1,246 @@
+/* Portfolio usability layer — accessible screenshot viewer, search, navigation. */
+/* This file intentionally layers above the base and flip-card styles. */
+.scroll-progress {
+  position: fixed;
+  z-index: 130;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  will-change: transform;
+}
+.nav-links a.is-current { color: var(--text); position: relative; }
+.nav-links a.is-current:after { content: ""; position: absolute; height: 2px; background: var(--accent); left: 0; right: 0; bottom: -8px; border-radius: 2px; }
+.project-search-label { width: min(345px,100%); flex-basis: min(345px,100%); }
+.project-search-label input { padding-right: 48px; }
+.project-search-label .search-shortcut {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 3px 7px;
+  color: var(--quiet);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: 10px var(--mono);
+  pointer-events: none;
+}
+.project-discover-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  margin: 0 0 22px;
+}
+.project-discover-row .project-results { margin: 0; }
+.project-quick-search { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.project-quick-search > span {
+  font: 10px var(--mono);
+  color: var(--quiet);
+  margin-right: 2px;
+}
+.project-quick-search button, .no-results button {
+  min-height: 30px;
+  padding: 6px 10px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font: 500 10px var(--font);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.project-quick-search button:hover,
+.project-quick-search button[aria-pressed="true"],
+.no-results button:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.project-quick-search button[aria-pressed="true"] { background: color-mix(in srgb,var(--accent) 13%,var(--surface)); }
+.project-quick-search button#clear-project-search { color: var(--text); font-weight: 700; }
+.project-quick-search button[hidden] { display: none !important; }
+.no-results { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
+.no-results[hidden] { display: none !important; }
+.no-results button { font-size: 12px; padding: 10px 13px; }
+
+/* Preview is available directly from all cards without changing navigation destinations. */
+.flip-back-links .flip-preview-link,
+.more-card-links .archive-preview-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #516957;
+  border-radius: 5px;
+  padding: 10px 12px;
+  min-height: 43px;
+  color: #e5f0df;
+  background: #ffffff0b;
+  font: 700 11px var(--font);
+  cursor: pointer;
+}
+.flip-back-links .flip-preview-link:hover,
+.flip-back-links .flip-preview-link:focus-visible {
+  border-color: #c5f57a;
+  background: #c5f57a18;
+}
+.flip-back-links .flip-preview-link span { font-size: 15px; line-height: 1; }
+.more-card-links .archive-preview-link {
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--text);
+  min-height: 36px;
+  padding: 9px 12px;
+  font-size: 11px;
+}
+.more-card-links .archive-preview-link:hover,
+.more-card-links .archive-preview-link:focus-visible { border-color: var(--accent); }
+.more-card-links .archive-preview-link span { font-size: 14px; color: var(--accent); }
+.project-preview-dialog {
+  position: fixed;
+  margin: auto;
+  border: 1px solid #536650;
+  border-radius: 15px;
+  background: #131b15;
+  color: #f1f5ed;
+  width: min(1140px, calc(100vw - 36px));
+  max-width: 1140px;
+  max-height: calc(100dvh - 34px);
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 30px 90px #000b;
+}
+.project-preview-dialog:not([open]) { display: none; }
+.project-preview-dialog::backdrop {
+  background: rgba(5,10,7,.82);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+.preview-dialog-layout { padding: clamp(16px,2.3vw,28px); }
+.preview-dialog-header {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 21px;
+}
+.preview-dialog-eyebrow { font: 500 9px var(--mono); color: #c5f57a; letter-spacing: .06em; }
+.preview-dialog-header h2 {
+  font-size: clamp(24px,3vw,36px);
+  line-height: 1.17;
+  letter-spacing: -.06em;
+  margin: 9px 0 0;
+}
+.preview-dialog-close {
+  color: #dbe6d7;
+  background: #253228;
+  border: 1px solid #566b58;
+  padding: 11px 14px;
+  border-radius: 6px;
+  font: 600 12px var(--font);
+  white-space: nowrap;
+}
+.preview-dialog-close:hover,.preview-dialog-close:focus-visible { border-color: #c5f57a; }
+.preview-dialog-close span { color: #c5f57a; font-size: 17px; margin-left: 10px; }
+.preview-dialog-figure { margin: 0; }
+.preview-dialog-figure img {
+  display: block;
+  width: 100%;
+  max-height: min(65dvh,720px);
+  height: auto;
+  object-fit: contain;
+  background: #0a130d;
+  border: 1px solid #3d4d40;
+  border-radius: 9px;
+}
+.preview-dialog-figure figcaption {
+  color: #a5b5a5;
+  font: 10px/1.6 var(--mono);
+  padding-top: 13px;
+}
+.preview-dialog-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #354535;
+}
+.preview-dialog-paging { display: flex; align-items: center; gap: clamp(10px,2vw,20px); }
+.preview-dialog-paging button,
+.preview-dialog-bottom > a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 13px;
+  min-height: 39px;
+  border: 1px solid #4d624e;
+  background: #263428;
+  border-radius: 5px;
+  color: #e7f0e4;
+  font-size: 11px;
+  font-weight: 700;
+}
+.preview-dialog-paging button:hover,
+.preview-dialog-paging button:focus-visible,
+.preview-dialog-bottom > a:hover { border-color: #c5f57a; }
+.preview-dialog-paging > span { font: 10px var(--mono); color: #b8cbb1; white-space: nowrap; }
+.preview-dialog-bottom > a { background: #c5f57a; color: #152412; border-color: #c5f57a; }
+.preview-dialog-bottom > a:hover { filter: brightness(.92); }
+.back-to-top {
+  position: fixed;
+  z-index: 90;
+  right: clamp(14px,2vw,32px);
+  bottom: clamp(14px,2vw,30px);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  color: var(--text);
+  background: color-mix(in srgb,var(--bg) 94%,transparent);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 5px 18px #0002;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font: 700 11px var(--font);
+  opacity: 0;
+  transform: translateY(15px);
+  pointer-events: none;
+  transition: opacity .2s, transform .2s, border-color .2s;
+}
+.back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { border-color: var(--accent); }
+@media (max-width:720px) {
+  .nav-links a.is-current:after { display: none; }
+  .project-discover-row { align-items: flex-start; flex-direction: column; }
+  .project-quick-search { gap: 6px; }
+  .project-quick-search button { font-size: 10px; }
+  .preview-dialog-bottom { align-items: stretch; }
+  .preview-dialog-paging { justify-content: space-between; width: 100%; }
+  .preview-dialog-bottom > a { width: 100%; }
+  .back-to-top { right: 14px; bottom: 15px; padding: 10px 12px; }
+  .back-to-top span { display: none; }
+}
+@media (max-width:400px) {
+  .project-preview-dialog { width: calc(100vw - 18px); max-height: calc(100dvh - 18px); border-radius: 10px; }
+  .preview-dialog-layout { padding: 13px; }
+  .preview-dialog-close { font-size: 0; padding: 8px 12px; }
+  .preview-dialog-close span { font-size: 20px; margin: 0; }
+  .preview-dialog-paging button { padding: 10px 8px; }
+  .flip-back-links .flip-preview-link { min-height: 36px; font-size: 10px; padding: 8px; }
+}
+/* Keep the 320px flip-card back view readable with four actions. */
+@media(max-width:375px) {
+  .flip-card { height: 615px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .back-to-top, .flip-back-links .flip-preview-link,.more-card-links .archive-preview-link { transition: none!important; }
+  .project-preview-dialog::backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
