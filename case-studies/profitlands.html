@@ -57,7 +57,7 @@
     <div class="case-detail">
       <div class="wrap case-detail-grid">
         <nav class="case-toc" aria-label="Case study sections">
-          <span>ON THIS PAGE</span><a href="#overview">What is it?</a><a href="#challenge">The problem to solve</a><a href="#approach">Designing the solution</a><a href="#features">What the project includes</a><a href="#implementation">Behind the build</a><a href="#status">What’s available today</a>
+          <span>ON THIS PAGE</span><a href="#overview">What is it?</a><a href="#challenge">The problem to solve</a><a href="#approach">Designing the solution</a><a href="#features">What the project includes</a><a href="#implementation">Behind the build</a><a href="#status">What’s available today</a><a href="#evidence">Verified evidence</a>
         </nav>
         <article class="case-article"><section class="case-block" id="overview" aria-labelledby="overview-heading"><span class="case-label">01 / PROJECT OVERVIEW</span><h2 id="overview-heading">What is it?</h2><p>ProfitLands asks players to start with a small amount of in-game capital, build businesses, and manage an expanding simulated economy. Rather than ending at a fixed wealth target, the game is designed around ongoing choices and progression.</p>
 <p>As systems grew, the interface needed to make operations understandable while remaining responsive for large in-game empires.</p></section>
@@ -71,7 +71,17 @@
 <div class="case-feature"><span class="feature-number">04</span><h3>Safeguards &amp; recovery</h3><p>Capacity checks and save-handling improvements reduce unintended in-game loss and inconsistent state.</p></div></div></section>
 <section class="case-block" id="implementation" aria-labelledby="implementation-heading"><span class="case-label">05 / IMPLEMENTATION</span><h2 id="implementation-heading">Behind the build</h2><p>The README details a supply-system change that uses bounded summary logs rather than adding a message for every replenished branch. It also describes optimizing the five-second supply tick to avoid repeated full-empire initialization.</p>
 <p>Other documented refinements include an 80-result searchable location picker, per-location inventory checks, keyboard-managed dialogs, and regression tests for large branch counts. These are repository-documented tests, not claims about independent production load.</p><div class="case-tech"><span>JavaScript</span><span>HTML &amp; CSS</span><span>Browser storage</span><span>Game state systems</span><span>Responsive UI</span></div></section>
-<section class="case-block" id="status" aria-labelledby="status-heading"><span class="case-label">06 / CURRENT STATE</span><h2 id="status-heading">What’s available today</h2><div class="case-status-note"><p>The public game homepage is available and the repository describes an evolving prototype. Multiplayer or production readiness should not be assumed from the existence of menu options.</p></div><p style="margin-top:19px">A useful next step would be to pair this overview with a real gameplay recording showing store management, economic decisions, and the latest UI in action.</p></section></article>
+<section class="case-block" id="status" aria-labelledby="status-heading"><span class="case-label">06 / CURRENT STATE</span><h2 id="status-heading">What’s available today</h2><div class="case-status-note"><p>The public game homepage is available and the repository describes an evolving prototype. Multiplayer or production readiness should not be assumed from the existence of menu options.</p></div><p style="margin-top:19px">A useful next step would be to pair this overview with a real gameplay recording showing store management, economic decisions, and the latest UI in action.</p></section>
+<section class="case-block case-evidence" id="evidence" aria-labelledby="evidence-heading">
+  <span class="case-label">07 / REPOSITORY EVIDENCE</span>
+  <h2 id="evidence-heading">Documented performance improvement</h2>
+  <div class="case-evidence-grid">
+    <div class="case-evidence-item"><strong>20,000 → 1</strong><p>wealth-tier calculations in a 100-company / 10,000-location test case</p></div>
+    <div class="case-evidence-item"><strong>Numerical equivalence</strong><p>regression tests compare the shared calculation context with the previous earnings formula</p></div>
+  </div>
+  <p class="case-evidence-caveat">These figures describe the repository's regression and stress-test scenario, not measured player traffic, frame rates, or revenue.</p>
+  <a class="case-evidence-source" href="https://github.com/Willn0tBill/ProfitLands/commit/b142b36e476e054d2d6188a0741ac6e4f2a105c5" target="_blank" rel="noopener noreferrer">View the optimization commit <span aria-hidden="true">↗</span></a>
+</section></article>
       </div>
     </div>
     <div class="wrap case-next">
