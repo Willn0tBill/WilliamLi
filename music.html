@@ -3,35 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#101310">
-  <meta name="description" content="William Li’s music portfolio: releases as WillnotBill, school ensembles, and creative process.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Music & Performance — William Li / WillnotBill">
-  <meta property="og:description" content="Recorded music, ensemble performance, and creative development.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="WillnotBill — independent music releases, official Spotify and Apple Music profiles, performance background, and creative work by William Li.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="WillnotBill — Music &amp; Performance">
+  <meta property="og:description" content="Explore the music of WillnotBill, including original releases, streaming links, and ensemble experience.">
+  <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/5b/e1/a35be1e2-5c68-f38e-5cb7-611f20be5f35/5064042719912_cover.jpg/700x700bb.jpg">
   <meta property="og:url" content="https://willn0tbill.github.io/WilliamLi/music.html">
-  <title>Music & Performance | William Li</title>
+  <title>WillnotBill — Music &amp; Performance | William Li</title>
   <link rel="canonical" href="https://willn0tbill.github.io/WilliamLi/music.html">
   <link rel="icon" type="image/svg+xml" href="./brand-mark-v4.svg">
+  <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./polish.css">
-  <link rel="stylesheet" href="./music.css?v=1">
+  <link rel="stylesheet" href="./music-redesign.css?v=1">
   <script src="./script.js" defer></script>
+  <script src="./music-interactions.js?v=1" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"WillnotBill","url":"https://willn0tbill.github.io/WilliamLi/music.html","sameAs":["https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a","https://music.apple.com/us/artist/willnotbill/1807622522"]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="./index.html" aria-label="William Li, home">
-        <span class="brand-mark" aria-hidden="true"><img src="./brand-mark-v4.svg" alt="" width="43" height="43"></span>
+      <a class="brand" href="./index.html" aria-label="William Li — portfolio home">
+        <span class="brand-mark" aria-hidden="true"><img src="./brand-mark-v4.svg" width="43" height="43" alt=""></span>
         <span class="brand-name">WILLIAM LI<span class="brand-divider">/</span>PORTFOLIO</span>
       </a>
       <div class="nav-links" id="nav-links">
         <a href="./index.html#work">Work</a>
         <a href="./music.html" aria-current="page">Music</a>
-        <a href="#releases">Releases</a>
-        <a href="#ensembles">Ensembles</a>
-        <a href="#process-heading">Process</a>
+        <a href="#discography">Discography</a>
+        <a href="#experience">Experience</a>
         <a href="./contact.html">Contact</a>
       </div>
       <div class="nav-actions">
@@ -39,118 +42,230 @@
           <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.7A8.9 8.9 0 0 1 8.3 3.8 9 9 0 1 0 20.2 15.7Z"/></svg>
           <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
         </button>
-        <a class="nav-cta" href="./contact.html">Connect <span aria-hidden="true">↗</span></a>
+        <a class="nav-cta" href="https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a" target="_blank" rel="noopener noreferrer">Spotify <span aria-hidden="true">↗</span></a>
         <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
       </div>
     </nav>
   </header>
 
-  <main id="main" class="music-page">
-    <section class="music-page-hero wrap" aria-labelledby="music-heading">
-      <div class="music-page-kicker">MUSIC / RELEASES, PERFORMANCE & CREATIVE WORK</div>
-      <h1 id="music-heading">Music is part<br>of the <em>story.</em></h1>
-      <p>I'm William Li, releasing music under the name <strong>WillnotBill</strong>. Alongside my software projects, music is an important part of my creative work—from recorded releases to school ensembles and ongoing musical exploration.</p>
-      <div class="music-page-hero-actions">
-        <a class="music-page-cta" href="#releases">Explore my releases <span aria-hidden="true">↗</span></a>
-        <a class="music-page-secondary" href="./index.html#work">See development work <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="music-page-marquee" aria-label="Music focus areas">
-        <span>WILLNOTBILL</span><span>ORIGINAL RELEASES</span><span>MARCHING BAND</span><span>JAZZ ENSEMBLE</span><span>MUSIC DEVELOPMENT</span>
-      </div>
-    </section>
-
-    <section class="music-page-section music-release-section" id="releases" aria-labelledby="releases-heading">
-      <div class="wrap">
-        <div class="music-section-heading reveal">
-          <div><span class="music-subtitle">01 / DISCOGRAPHY</span><h2 id="releases-heading">Released as <em>WillnotBill.</em></h2></div>
-          <p>A selection of publicly listed singles from 2025 and 2026. The links below open my public Spotify and Apple Music catalogs.</p>
+  <main id="main" class="artist-main">
+    <section class="artist-hero" aria-labelledby="artist-heading">
+      <div class="wrap artist-hero-inner">
+        <div class="artist-intro">
+          <div class="artist-overline"><span class="artist-live-dot" aria-hidden="true"></span> INDEPENDENT MUSIC / WILLNOTBILL</div>
+          <h1 id="artist-heading">The art of<br><em>WillnotBill.</em></h1>
+          <p>Music, performance, and creative exploration. A growing catalog of original releases alongside the experiences that shape my sound.</p>
+          <div class="artist-hero-actions">
+            <a class="artist-primary" href="https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a" target="_blank" rel="noopener noreferrer">Listen on Spotify <span aria-hidden="true">↗</span></a>
+            <a class="artist-secondary" href="#discography">Explore the catalog <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="artist-hero-foot"><span>ORIGINAL RELEASES</span><i aria-hidden="true"></i><span>ENSEMBLE PERFORMANCE</span><i aria-hidden="true"></i><span>CREATIVE PRACTICE</span></div>
         </div>
-        <div class="music-stream-platforms reveal">
-          <a class="music-spotify-button" href="https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a" target="_blank" rel="noopener noreferrer" aria-label="Open WillnotBill artist profile on Spotify">
-            <span class="music-stream-symbol" aria-hidden="true">◉</span>
-            <span><strong>Listen on Spotify</strong><small>Official artist catalog</small></span>
-            <span class="music-stream-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="music-apple-button" href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer" aria-label="Open WillnotBill on Apple Music">
-            <span class="music-stream-symbol" aria-hidden="true">♫</span>
-            <span><strong>Listen on Apple Music</strong><small>Public artist catalog</small></span>
-            <span class="music-stream-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <div class="music-release-grid">
-          <a class="music-release-card reveal" href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer">
-            <span class="music-release-number">01 / 2026</span><span class="music-release-visual visual-rain" aria-hidden="true"><i></i><b>RC</b></span>
-            <h3>Rain Chimes</h3><span class="music-release-footer">SINGLE <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="music-release-card reveal" href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer">
-            <span class="music-release-number">02 / 2026</span><span class="music-release-visual visual-detroit" aria-hidden="true"><i></i><b>DT</b></span>
-            <h3>Detroit</h3><span class="music-release-footer">SINGLE <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="music-release-card reveal" href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer">
-            <span class="music-release-number">03 / 2026</span><span class="music-release-visual visual-elegance" aria-hidden="true"><i></i><b>EL</b></span>
-            <h3>Elegance</h3><span class="music-release-footer">SINGLE <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="music-release-card reveal" href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer">
-            <span class="music-release-number">04 / 2025</span><span class="music-release-visual visual-murmurs" aria-hidden="true"><i></i><b>MM</b></span>
-            <h3>Murmurs</h3><span class="music-release-footer">SINGLE <span aria-hidden="true">↗</span></span>
-          </a>
-        </div>
-        <p class="music-release-note">Release cards use original abstract visuals, not official album artwork. For the complete catalog, visit the music platform links above. The Spotify and Apple Music links lead to the WillnotBill artist catalogs.</p>
+        <aside class="artist-spotlight" aria-label="Featured latest release">
+          <div class="spotlight-header"><span>FEATURED RELEASE</span><span>01 / LATEST</span></div>
+          <div class="spotlight-image"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/5b/e1/a35be1e2-5c68-f38e-5cb7-611f20be5f35/5064042719912_cover.jpg/700x700bb.jpg" alt="Official cover artwork for Serenity" width="700" height="700" fetchpriority="high"><span class="spotlight-tag">JUL 2026</span></div>
+          <div class="spotlight-info">
+            <div><span class="spotlight-label">WILLNOTBILL · SINGLE</span><h2>Serenity</h2></div>
+            <a href="https://music.apple.com/us/album/serenity/6810453096?i=6810453342" target="_blank" rel="noopener noreferrer" aria-label="Listen to Serenity on Apple Music">↗</a>
+          </div>
+          <p class="spotlight-subtitle">Latest release listed in the public Apple Music catalog.</p>
+        </aside>
       </div>
     </section>
 
-    <section id="ensembles" class="music-page-section" aria-labelledby="ensemble-heading">
+    <div class="artist-strip"><div class="wrap artist-strip-inner"><span>01 / DISCOGRAPHY</span><span>02 / EXPERIENCE</span><span>03 / CREATIVE PROCESS</span><a href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer">ALL RELEASES ↗</a></div></div>
+
+    <section class="artist-discography artist-section" id="discography" aria-labelledby="discography-heading">
       <div class="wrap">
-        <div class="music-section-heading reveal">
-          <div><span class="music-subtitle">02 / ENSEMBLE EXPERIENCE</span><h2 id="ensemble-heading">Playing as <em>one.</em></h2></div>
-          <p>My school music involvement spans multiple ensemble settings—each with a different approach to listening, preparation, timing, and teamwork.</p>
+        <div class="artist-section-top">
+          <div><div class="artist-kicker">01 / THE MUSIC</div><h2 id="discography-heading">The <em>discography.</em></h2></div>
+          <p>Official singles published under WillnotBill, ordered from newest to oldest. Select a cover to listen on Apple Music.</p>
         </div>
-        <div class="music-ensemble-grid">
-          <article class="music-ensemble-card reveal">
-            <span>PERFORMANCE / FIELD</span><div class="music-card-mark" aria-hidden="true">↗</div>
-            <h3>Marching band</h3>
-            <p>Working as part of a coordinated outdoor ensemble where timing, musical precision, visual movement, and consistency all matter.</p>
-            <small>SCHOOL ENSEMBLE EXPERIENCE</small>
+        <div class="artist-filter-toolbar">
+          <div class="artist-year-filters" role="group" aria-label="Filter releases by year">
+            <button type="button" data-release-filter="all" class="is-active" aria-pressed="true">All releases <span>11</span></button>
+            <button type="button" data-release-filter="2026" aria-pressed="false">2026 <span>04</span></button>
+            <button type="button" data-release-filter="2025" aria-pressed="false">2025 <span>07</span></button>
+          </div>
+          <label class="artist-search"><span class="artist-search-icon" aria-hidden="true">⌕</span><input type="search" id="music-search" placeholder="Find a track" autocomplete="off" aria-label="Search music releases"></label>
+        </div>
+        <p id="release-count" class="artist-release-count" role="status" aria-live="polite">Showing 11 releases</p>
+        <div class="artist-release-grid" id="release-grid">
+          <article class="artist-release" data-year="2026" data-title="serenity">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/serenity/6810453096?i=6810453342" target="_blank" rel="noopener noreferrer" aria-label="Listen to Serenity on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/5b/e1/a35be1e2-5c68-f38e-5cb7-611f20be5f35/5064042719912_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Serenity" loading="eager" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>JUL 13, 2026</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Serenity</h3>
+              <a href="https://music.apple.com/us/album/serenity/6810453096?i=6810453342" target="_blank" rel="noopener noreferrer" aria-label="Open Serenity on Apple Music">↗</a>
+            </div>
           </article>
-          <article class="music-ensemble-card reveal">
-            <span>PERFORMANCE / JAZZ</span><div class="music-card-mark" aria-hidden="true">♬</div>
-            <h3>Jazz ensemble</h3>
-            <p>Developing ensemble awareness, style, phrasing, and musical responsiveness through jazz rehearsals and performance.</p>
-            <small>SCHOOL ENSEMBLE EXPERIENCE</small>
+
+          <article class="artist-release" data-year="2026" data-title="rain chimes">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/rain-chimes/1876491491?i=1876491492" target="_blank" rel="noopener noreferrer" aria-label="Listen to Rain Chimes on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a4/d2/d7/a4d2d7c0-be44-1a91-515e-48e7f0e1e0da/5063906237258_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Rain Chimes" loading="eager" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>JAN 28, 2026</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Rain Chimes</h3>
+              <a href="https://music.apple.com/us/album/rain-chimes/1876491491?i=1876491492" target="_blank" rel="noopener noreferrer" aria-label="Open Rain Chimes on Apple Music">↗</a>
+            </div>
           </article>
-          <article class="music-ensemble-card reveal">
-            <span>PERFORMANCE / CONCERT</span><div class="music-card-mark" aria-hidden="true">◌</div>
-            <h3>Concert & wind ensemble</h3>
-            <p>Working on concert repertoire, musical balance, interpretation, and the collective sound of a larger instrumental ensemble.</p>
-            <small>SCHOOL ENSEMBLE EXPERIENCE</small>
+
+          <article class="artist-release" data-year="2026" data-title="detroit">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/detroit/1876960019?i=1876960020" target="_blank" rel="noopener noreferrer" aria-label="Listen to Detroit on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/94/34/40/94344032-6ef2-f940-2396-f8b1644b6d4b/5063906652686_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Detroit" loading="eager" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>JAN 23, 2026</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Detroit</h3>
+              <a href="https://music.apple.com/us/album/detroit/1876960019?i=1876960020" target="_blank" rel="noopener noreferrer" aria-label="Open Detroit on Apple Music">↗</a>
+            </div>
           </article>
+
+          <article class="artist-release" data-year="2026" data-title="elegance">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/elegance/1876209042?i=1876209043" target="_blank" rel="noopener noreferrer" aria-label="Listen to Elegance on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a0/57/b2/a057b2ae-c992-9217-7f48-f9def4b47417/5063907622275_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Elegance" loading="eager" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>JAN 19, 2026</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Elegance</h3>
+              <a href="https://music.apple.com/us/album/elegance/1876209042?i=1876209043" target="_blank" rel="noopener noreferrer" aria-label="Open Elegance on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="in love with you (remix)">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/in-love-with-you-remix/1856952770?i=1856952772" target="_blank" rel="noopener noreferrer" aria-label="Listen to In love with you (Remix) on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b7/12/8f/b7128f19-d3d5-9c8c-c960-ba7d751ec5fd/5063501923686_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for In love with you (Remix)" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>NOV 12, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>In love with you (Remix)</h3>
+              <a href="https://music.apple.com/us/album/in-love-with-you-remix/1856952770?i=1856952772" target="_blank" rel="noopener noreferrer" aria-label="Open In love with you (Remix) on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="leave">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/leave/1820468033?i=1820468034" target="_blank" rel="noopener noreferrer" aria-label="Listen to Leave on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bf/51/47/bf5147d7-310d-8137-dde7-dace122d0bc1/5063766136661_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Leave" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>MAY 30, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Leave</h3>
+              <a href="https://music.apple.com/us/album/leave/1820468033?i=1820468034" target="_blank" rel="noopener noreferrer" aria-label="Open Leave on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="little by little">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/little-by-little/1826080225?i=1826080226" target="_blank" rel="noopener noreferrer" aria-label="Listen to Little by Little on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/23/f6/98/23f698e9-57b9-0cba-33d7-beb4a46afbf4/5063740343016_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Little by Little" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>MAY 25, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Little by Little</h3>
+              <a href="https://music.apple.com/us/album/little-by-little/1826080225?i=1826080226" target="_blank" rel="noopener noreferrer" aria-label="Open Little by Little on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="murmurs">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/murmurs/1819595917?i=1819595918" target="_blank" rel="noopener noreferrer" aria-label="Listen to Murmurs on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/b9/b3/b5b9b3ef-581b-c7c5-0e6c-c218e674848d/5063766562477_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Murmurs" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>MAY 15, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Murmurs</h3>
+              <a href="https://music.apple.com/us/album/murmurs/1819595917?i=1819595918" target="_blank" rel="noopener noreferrer" aria-label="Open Murmurs on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="monarch">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/monarch/1814121364?i=1814121365" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monarch on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/37/d7/8637d710-195e-1abb-ef12-80d1527abea5/5063687549878_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Monarch" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>APR 30, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Monarch</h3>
+              <a href="https://music.apple.com/us/album/monarch/1814121364?i=1814121365" target="_blank" rel="noopener noreferrer" aria-label="Open Monarch on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="memphis stuff, pt. 2">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/memphis-stuff-pt-2/1816234682?i=1816234683" target="_blank" rel="noopener noreferrer" aria-label="Listen to Memphis Stuff, Pt. 2 on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ac/56/e2/ac56e2db-74e8-1f44-41e6-edb666bc8ce7/5063740071537_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Memphis Stuff, Pt. 2" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>APR 23, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Memphis Stuff, Pt. 2</h3>
+              <a href="https://music.apple.com/us/album/memphis-stuff-pt-2/1816234682?i=1816234683" target="_blank" rel="noopener noreferrer" aria-label="Open Memphis Stuff, Pt. 2 on Apple Music">↗</a>
+            </div>
+          </article>
+
+          <article class="artist-release" data-year="2025" data-title="memphis stuff">
+            <a class="artist-release-art" href="https://music.apple.com/us/album/memphis-stuff/1807622521?i=1807622523" target="_blank" rel="noopener noreferrer" aria-label="Listen to Memphis Stuff on Apple Music">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/02/cd/50/02cd5064-3ae3-ed54-b53a-5101b95ac733/5063710352130_cover.jpg/500x500bb.jpg" width="500" height="500" alt="Official cover artwork for Memphis Stuff" loading="lazy" decoding="async">
+              <span class="release-view" aria-hidden="true">Listen ↗</span>
+            </a>
+            <div class="artist-release-meta"><span>MAR 15, 2025</span><span>SINGLE</span></div>
+            <div class="artist-release-bottom">
+              <h3>Memphis Stuff</h3>
+              <a href="https://music.apple.com/us/album/memphis-stuff/1807622521?i=1807622523" target="_blank" rel="noopener noreferrer" aria-label="Open Memphis Stuff on Apple Music">↗</a>
+            </div>
+          </article>
+        </div>
+        <div class="artist-no-results" id="release-empty" hidden><p>No tracks match that search.</p><button type="button" id="release-reset">Show all releases ↗</button></div>
+        <div class="artist-source-note">Artwork and release dates are from the public Apple Music catalog. Streaming availability can differ by platform and region.</div>
+      </div>
+    </section>
+
+    <section class="artist-platform-section" aria-labelledby="platform-heading">
+      <div class="wrap artist-platform-grid">
+        <div><div class="artist-kicker">WHERE TO LISTEN</div><h2 id="platform-heading">Your platform.<br><em>My music.</em></h2><p>Choose the streaming service you use. Both links go directly to the WillnotBill artist catalog.</p></div>
+        <div class="artist-platform-links">
+          <a href="https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a" target="_blank" rel="noopener noreferrer"><span class="platform-mark">◉</span><span><strong>Spotify</strong><small>Artist profile</small></span><b aria-hidden="true">↗</b></a>
+          <a href="https://music.apple.com/us/artist/willnotbill/1807622522" target="_blank" rel="noopener noreferrer"><span class="platform-mark">♫</span><span><strong>Apple Music</strong><small>Full release catalog</small></span><b aria-hidden="true">↗</b></a>
         </div>
       </div>
     </section>
 
-    <section class="music-page-section" aria-labelledby="process-heading">
+    <section class="artist-experience artist-section" id="experience" aria-labelledby="experience-heading">
       <div class="wrap">
-        <div class="music-section-heading reveal">
-          <div><span class="music-subtitle">04 / CREATIVE PROCESS</span><h2 id="process-heading">The work behind <em>the sound.</em></h2></div>
-          <p>Musical ideas get stronger through listening, rewriting, rehearsal-minded decisions, and carefully balancing the ensemble.</p>
+        <div class="artist-section-top">
+          <div><div class="artist-kicker">02 / PERFORMANCE</div><h2 id="experience-heading">Beyond the <em>recordings.</em></h2></div>
+          <p>Ensemble music is a different kind of creative practice—built around listening, preparation, and contributing to a shared performance.</p>
         </div>
-        <div class="music-process-grid">
-          <article class="music-process-card reveal"><span class="music-process-number">01 / COMPOSITION</span><h3>Musical ideas</h3><p>Develop themes, harmonic direction, contrasts, and pacing that make sense over a full show.</p></article>
-          <article class="music-process-card reveal"><span class="music-process-number">02 / ORCHESTRATION</span><h3>Color and balance</h3><p>Think about the roles of woodwinds, brass, battery, and front ensemble rather than treating each section identically.</p></article>
-          <article class="music-process-card reveal"><span class="music-process-number">03 / REVISION</span><h3>Refine through listening</h3><p>Revisit exposed entrances, transitions, percussion balance, and material that repeats too often.</p></article>
-          <article class="music-process-card reveal"><span class="music-process-number">04 / PERFORMANCE</span><h3>Keep it playable</h3><p>Consider clarity, endurance, rehearsal needs, and how complex writing translates into actual ensemble performance.</p></article>
+        <div class="artist-experience-list">
+          <article class="artist-experience-item"><span class="experience-index">01</span><div class="experience-type">FIELD ENSEMBLE</div><div><h3>Marching band</h3><p>Working within a coordinated outdoor ensemble, where timing, musical clarity, and collective precision shape the result.</p></div><span class="experience-symbol" aria-hidden="true">↗</span></article>
+          <article class="artist-experience-item"><span class="experience-index">02</span><div class="experience-type">JAZZ ENSEMBLE</div><div><h3>Jazz</h3><p>Developing phrasing, responsiveness, style, and the ability to listen across different musical roles.</p></div><span class="experience-symbol" aria-hidden="true">♬</span></article>
+          <article class="artist-experience-item"><span class="experience-index">03</span><div class="experience-type">CONCERT ENSEMBLE</div><div><h3>Concert &amp; wind ensemble</h3><p>Exploring blend, interpretation, balance, and the collaborative work of shaping an ensemble sound.</p></div><span class="experience-symbol" aria-hidden="true">◌</span></article>
         </div>
       </div>
     </section>
 
-    <section class="music-page-end" aria-labelledby="music-end-heading">
-      <div class="wrap">
-        <h2 id="music-end-heading">Creative work, in<br>more than one medium.</h2>
-        <p>Music and software might seem different, but I approach both through experimentation, structure, collaboration, and iteration.</p>
-        <a href="./index.html">Back to the full portfolio <span aria-hidden="true">↗</span></a>
+    <section class="artist-process artist-section" id="creative-process" aria-labelledby="process-heading">
+      <div class="wrap artist-process-grid">
+        <div class="artist-process-intro"><div class="artist-kicker">03 / THE PROCESS</div><h2 id="process-heading">Where ideas<br><em>take shape.</em></h2><p>Recording and ensemble work ask different things of a musician, but both grow through careful listening, experimentation, and revision.</p></div>
+        <div class="artist-process-rows">
+          <div class="artist-process-row"><span>01</span><div><h3>Explore</h3><p>Start with a musical idea, test different directions, and find an identity for each piece.</p></div></div>
+          <div class="artist-process-row"><span>02</span><div><h3>Develop</h3><p>Give the material structure, shape the details, and think about how the parts work together.</p></div></div>
+          <div class="artist-process-row"><span>03</span><div><h3>Refine</h3><p>Listen critically, make changes, and revisit the choices that affect clarity and expression.</p></div></div>
+          <div class="artist-process-row"><span>04</span><div><h3>Share</h3><p>Bring the result to listeners through released music or to fellow musicians through performance.</p></div></div>
+        </div>
       </div>
     </section>
+
+    <section class="artist-closing"><div class="wrap artist-closing-inner"><div><div class="artist-kicker">MUSIC &amp; TECHNOLOGY</div><h2>More than<br><em>one medium.</em></h2><p>Explore the rest of my work across websites, software, and interactive projects.</p></div><a href="./index.html#work">Explore the full portfolio <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><a href="./index.html" class="footer-brand">WL<span>.</span></a><span>DEVELOPMENT, MUSIC & CREATIVE WORK.</span><a href="./index.html#work">PROJECTS ↗</a></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><a href="./index.html" class="footer-brand">WL<span>.</span></a><span>WILLNOTBILL · MUSIC &amp; DEVELOPMENT</span><a href="./contact.html">CONTACT ↗</a></div></footer>
 </body>
 </html>
