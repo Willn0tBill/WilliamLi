@@ -278,3 +278,17 @@
 @media(prefers-reduced-motion:reduce) {
   .flip-card-inner,.flip-card-front img,.flip-toggle,.flip-back-links a { transition: none!important; }
 }
+
+
+/* Give medium-sized screens generous readable card widths. */
+@media (min-width:561px) and (max-width:920px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-grid > .flip-project-card {
+    width: min(100%,620px);
+    justify-self: center;
+  }
+  .flip-card { height: 480px; }
+}
+@media (min-width:921px) {
+  .flip-card { min-height: 470px; }
+}
