@@ -13,22 +13,24 @@ Private and local-only projects are intentionally omitted from the public-facing
 
 ## What's included
 
-- An editorial-style, responsive homepage with original CSS-drawn project artwork.
+- A refined editorial-style homepage with a real project index and original CSS-drawn project illustrations.
 - Selected projects with links to real, public GitHub repositories.
-- Project filters for games, tools, and websites.
+- Project filters for games, tools, websites, and community projects.
 - Light and dark themes with an optional saved preference.
+- A Support section with working GitHub star/follow links and a ready-to-configure donation button.
 - Mobile navigation, keyboard-accessible controls, and reduced-motion support.
 - Simple SEO/Open Graph metadata and a custom vector favicon.
 - No JavaScript framework, build step, API key, or paid hosting required.
 
-Project preview visuals are **illustrations**, not screenshots or assertions of live game data. The numerical figures appearing in visual mockups are decorative.
+Project previews are **illustrations**, not screenshots. Any visual mockup text is illustrative, not an assertion about live project data.
 
 ## File structure
 
 | File | Purpose |
 | --- | --- |
 | `index.html` | Page content and accessible structure |
-| `styles.css` | Layout, responsive design, themes, and illustrations |
+| `styles.css` | Base layout, themes, and CSS-drawn project illustrations |
+| `polish.css` | Editorial refinement, responsive project links, and support section |
 | `script.js` | Appearance toggle, menu, filters, scroll reveals |
 | `favicon.svg` | Site icon |
 
@@ -50,6 +52,19 @@ Then visit `http://localhost:8000`.
 4. After GitHub completes the deployment, use the **Visit site** button or open https://willn0tbill.github.io/WilliamLi/.
 
 When you push changes to `main`, GitHub Pages will redeploy automatically.
+
+## Support and donations
+
+The portfolio's **Support** section is visible at `#support`. Visitors can already follow the GitHub account and star public repositories. Monetary donations are deliberately **not active** until a real HTTPS donation destination is configured.
+
+To activate a monetary donation link:
+
+1. Use a legitimate payment or donations account managed by someone who meets the provider's requirements. Do not publish bank credentials, API keys, or private account information.
+2. In `script.js`, set `const DONATION_URL = '';` to the public HTTPS payment page URL.
+3. Commit that change. The site automatically shows a **Donate securely** link in the Support panel. The visitor completes payment entirely on the external provider.
+4. Test the link yourself before sharing it. If it is empty or malformed, the button stays hidden and the page shows the truthful unavailable state.
+
+The website does not collect or process payments. Do not call the donation link live until it is actually configured.
 
 ## Customization
 
