@@ -290,5 +290,5 @@
   .flip-card { height: 480px; }
 }
 @media (min-width:921px) {
-  .flip-card { min-height: 470px; }
+  .flip-card { min-height: 510px; }
 }
