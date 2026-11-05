@@ -251,11 +251,11 @@
 }
 .flip-intro-hint strong { color: var(--muted); font-weight: 500; }
 @media(max-width:800px) {
-  .flip-card { height: 430px; }
+  .flip-card { height: 480px; }
   .project-grid > .flip-project-card.project-card-wide { max-width: none; }
 }
 @media(max-width:560px) {
-  .flip-card { height: 450px; }
+  .flip-card { height: 515px; }
   .flip-card-back { padding: 22px; }
   .flip-front-top { padding: 16px; }
   .flip-front-bottom { padding: 0 21px 24px; }
@@ -269,7 +269,7 @@
   .flip-front-top > span { font-size: 8px; }
 }
 @media(max-width:375px) {
-  .flip-card { height: 455px; }
+  .flip-card { height: 570px; }
   .flip-card-back { padding: 18px; }
   .flip-description { font-size: 11px; }
   .flip-back-links { gap: 5px; }
