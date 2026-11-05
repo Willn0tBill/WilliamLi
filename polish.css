@@ -243,3 +243,11 @@ body { font-feature-settings: "kern"; }
  .archive-thumb { aspect-ratio: 16/9; }
  .project-visual:hover .real-project-shot { transform: none; }
 }
+
+
+/* Mobile overflow repair: absolute decorative glow expanded the layout viewport. */
+@media (max-width:800px) {
+  .ambient-glow { display: none !important; }
+}
+/* Solid accent lettering remains legible at every resolution. */
+.hero .text-outline { color: var(--accent); -webkit-text-stroke: 0; }
