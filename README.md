@@ -1,81 +1,72 @@
 # William Li — Portfolio
 
-A personal portfolio showcasing selected websites, digital products, tools, and games by William Li.
+A modern static portfolio showcasing public websites, software, games, and project case studies by William Li.
 
-**Repository:** https://github.com/Willn0tBill/WilliamLi  
-**GitHub Pages URL (after Pages is enabled):** https://willn0tbill.github.io/WilliamLi/
+**Live:** https://willn0tbill.github.io/WilliamLi/
+**Repository:** https://github.com/Willn0tBill/WilliamLi
 
-## Project coverage
+## Current features
 
-The site now lists **10 public repositories**: five featured projects (ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly) and five additional projects (Wtv Innovations, SwiftSupply, New Republic Network, NRE Empire, Li's Trees and Fruits).
+- Ten public projects with **real website screenshots**, not generated mockups.
+- Seven detailed case studies: ProfitLands, SwiftSupply Ops, Troop 710, NationWars, Paw Prints Weekly, SwiftSupply, and Wtv Innovations.
+- Dedicated **Website**, **GitHub**, and **Case study** links where available.
+- Searchable project directory with category filters, an accessible result count, and an empty-state message.
+- Mobile navigation, light/dark mode, reduced-motion support, skip links, SEO metadata, sitemap, and 404 page.
+- A separate **Contact** page for drafting a public GitHub issue and copying an inquiry.
+- A **Support My Work** section; monetary donations remain disabled until a verified provider URL is supplied.
 
-Private and local-only projects are intentionally omitted from the public-facing site until suitable public descriptions or permissions are available. Project filters support multiple categories per card.
+## Verified screenshots
 
-## What's included
+Images captured from public sites in November 2026 are stored under `assets/screenshots/`: `profitlands.jpg`, `swiftsupplyops.jpg`, `troop710.jpg`, `nationwars.jpg`, `ppw.jpg`, `wtvi.jpg`, `swiftsupply.jpg`, `nrn.jpg`, `nre.jpg`, and `li-fruits.jpg`.
 
-- A refined editorial-style homepage with a real project index and original CSS-drawn project illustrations.
-- Selected projects with links to real, public GitHub repositories.
-- Project filters for games, tools, websites, and community projects.
-- Light and dark themes with an optional saved preference.
-- A Support section with working GitHub star/follow links and a ready-to-configure donation button.
-- Mobile navigation, keyboard-accessible controls, and reduced-motion support.
-- Simple SEO/Open Graph metadata and a custom vector favicon.
-- No JavaScript framework, build step, API key, or paid hosting required.
+These are real browser captures. They do **not** assert that all game modes or outside services have been independently verified. SwiftSupply Ops displays only its public sign-in page, not internal business information. The Troop 710 site contains illustrative stock imagery within its genuine webpage screenshot.
 
-Project previews are **illustrations**, not screenshots. Any visual mockup text is illustrative, not an assertion about live project data.
+## Case study pages
 
-## File structure
+- [ProfitLands](case-studies/profitlands.html)
+- [SwiftSupply Ops](case-studies/swiftsupply-ops.html)
+- [Troop 710](case-studies/troop710.html)
+- [NationWars](case-studies/nationwars.html)
+- [Paw Prints Weekly](case-studies/paw-prints-weekly.html)
+- [SwiftSupply](case-studies/swiftsupply.html)
+- [Wtv Innovations](case-studies/wtv-innovations.html)
 
-| File | Purpose |
+Each page includes a real screenshot, project challenge, implementation approach, features, technologies, and a clear status/limitations note. The three other public projects appear in the archive with screenshot, Website, and GitHub links.
+
+## Contact and inquiries
+
+`contact.html` provides a project-brief form implemented in `contact.js` without a backend or personal email address. It requires no account to draft. The **Review on GitHub** button prepares a **public GitHub issue draft** at this repository; the visitor must sign into GitHub, review it, and submit it themselves. Clicking the website button alone does **not** send a message. The **Copy inquiry** button provides a clipboard alternative.
+
+The form explicitly warns against publishing addresses, personal contact information, customer records, passwords, and confidential details in GitHub issues. It stores no visitor messages or personal data. This is **not** a private contact method; add a private channel only when the owner intentionally approves one.
+
+## Files
+
+| Path | Purpose |
 | --- | --- |
-| `index.html` | Page content and accessible structure |
-| `styles.css` | Base layout, themes, and CSS-drawn project illustrations |
-| `polish.css` | Editorial refinement, responsive project links, and support section |
-| `script.js` | Appearance toggle, menu, filters, scroll reveals |
-| `favicon.svg` | Site icon |
+| `index.html` | Homepage and portfolio directory |
+| `styles.css`, `polish.css`, `script.js` | Shared styling and interactions |
+| `assets/screenshots/` | Real project screenshots |
+| `case-studies/*.html`, `case-studies/case.css` | Seven detailed case studies |
+| `contact.html`, `contact.css`, `contact.js` | Inquiry drafting and privacy-aware UX |
+| `brand-mark-v4.svg`, `favicon.svg` | Branding |
+| `404.html`, `robots.txt`, `sitemap.xml` | Error page and discoverability |
 
-## Preview locally
+## Run and publish
 
-Open `index.html` in a browser. No installation is required. For a local development server, run:
+Open `index.html` in a browser or run `python -m http.server 8000` in the repository, then open `http://localhost:8000`.
 
-```bash
-python -m http.server 8000
-```
+On GitHub, publish from **Settings → Pages → Deploy from a branch → main → /(root)**. The expected URL is https://willn0tbill.github.io/WilliamLi/. Commits may precede live deployment.
 
-Then visit `http://localhost:8000`.
+## Donations
 
-## Publish for free using GitHub Pages
+The Support section links to public GitHub projects and the profile. Monetary donations intentionally remain off until an appropriate verified external HTTPS page is available. Set `const DONATION_URL = '';` in `script.js` to the selected public payment page only after account eligibility and owner approval. Never place credentials or banking details in public code.
 
-1. Go to **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select **main**, folder **/(root)**, then **Save**.
-4. After GitHub completes the deployment, use the **Visit site** button or open https://willn0tbill.github.io/WilliamLi/.
+## Quality and privacy notes
 
-When you push changes to `main`, GitHub Pages will redeploy automatically.
-
-## Support and donations
-
-The portfolio's **Support** section is visible at `#support`. Visitors can already follow the GitHub account and star public repositories. Monetary donations are deliberately **not active** until a real HTTPS donation destination is configured.
-
-To activate a monetary donation link:
-
-1. Use a legitimate payment or donations account managed by someone who meets the provider's requirements. Do not publish bank credentials, API keys, or private account information.
-2. In `script.js`, set `const DONATION_URL = '';` to the public HTTPS payment page URL.
-3. Commit that change. The site automatically shows a **Donate securely** link in the Support panel. The visitor completes payment entirely on the external provider.
-4. Test the link yourself before sharing it. If it is empty or malformed, the button stays hidden and the page shows the truthful unavailable state.
-
-The website does not collect or process payments. Do not call the donation link live until it is actually configured.
-
-## Customization
-
-- Change headings, introduction, project descriptions, and links in `index.html`.
-- Adjust the color palette through the CSS variables at the top of `styles.css`.
-- Add another project by copying a `.project-card` and setting its `data-category` to `games`, `tools`, or `websites`. Update the displayed total in the "All work" filter.
-- Replace the illustrated project previews with your own genuine screenshots whenever available.
-- The contact area currently links to GitHub and intentionally doesn't publish personal contact details.
-
-## Notes
-
-Fonts are loaded from Google Fonts when online, with system-font fallbacks when offline. The project has no other runtime dependencies. For production, verify project descriptions and URLs as projects evolve.
+- Real public screenshots captured and stored, with no authenticated internal screens captured.
+- Browser smoke tests run for desktop and mobile layouts. A 390px viewport overflow caused by decorative background artwork was found and fixed.
+- Search and category filters tested, including a Troop 710 query and the Games filter.
+- GitHub issue URL creation and the feedback text were tested without creating an actual issue.
+- JavaScript syntax checked, and GitHub Pages paths/links must be kept current as public projects evolve.
 
 © William Li.
