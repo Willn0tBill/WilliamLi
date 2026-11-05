@@ -157,3 +157,30 @@
 }
 @media(max-width:370px) { .music-release-grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) { .music-stream-platforms a,.music-release-card { transition:none!important; } }
+
+
+/* Homepage music feature: real release artwork replaces conceptual notation. */
+.music-stage-release { min-height:540px; gap:17px; background: radial-gradient(circle at 62% 16%,#3b533c,#1b301f 61%,#152418); }
+.music-stage-release-art { position:relative; z-index:2; display:block; width:min(100%,318px); aspect-ratio:1; margin:4px auto 0; background:#273e2a; border:1px solid #9abb8a55; border-radius:8px; overflow:hidden; box-shadow:0 17px 40px #0004; }
+.music-stage-release-art img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s; }
+.music-stage-release-art:hover img { transform:scale(1.04); }
+.music-stage-release-info { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.music-stage-release-info > div { display:flex; flex-direction:column; gap:6px; }
+.music-stage-release-info > div span { color:#b5c9ad; font:9px var(--mono); }
+.music-stage-release-info strong { color:#f1f6e8; font-size:clamp(25px,3vw,37px); line-height:1.17; letter-spacing:-.065em; }
+.music-stage-release-info a { display:inline-flex; align-items:center; gap:9px; color:#c5f57a; font:500 11px var(--mono); border-bottom:1px solid #aacb8e7e; padding-bottom:6px; white-space:nowrap; }
+.music-stage-release-info a:hover { border-color:#c5f57a; }
+.music-stage-release-info a span { font-size:16px; }
+.music-stage-release-foot { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 13px; position:relative; z-index:2; border-top:1px solid #71826b6d; padding-top:18px; margin-top:auto; }
+.music-stage-release-foot span,.music-stage-release-foot a { font:500 9px var(--mono); letter-spacing:.04em; color:#b9cdb5; }
+.music-stage-release-foot a { color:#c5f57a; }
+.music-stage-release-foot a:hover { text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:900px) { .music-stage-release { min-height:530px; } }
+@media(max-width:560px) {
+ .music-stage-release { min-height:0; gap:15px; }
+ .music-stage-release-art { width:min(100%,270px); }
+ .music-stage-release-info > div span { font-size:8px; }
+ .music-stage-release-info strong { font-size:30px; }
+ .music-stage-release-foot span,.music-stage-release-foot a { font-size:8px; }
+}
+@media(prefers-reduced-motion:reduce) { .music-stage-release-art img { transition:none!important; } }
