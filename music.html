@@ -18,12 +18,15 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./polish.css">
   <link rel="stylesheet" href="./music-redesign.css?v=1">
+  <link rel="stylesheet" href="./music-motion.css?v=1">
   <script src="./script.js" defer></script>
   <script src="./music-interactions.js?v=1" defer></script>
+  <script src="./music-motion.js?v=1" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"WillnotBill","url":"https://willn0tbill.github.io/WilliamLi/music.html","sameAs":["https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a","https://music.apple.com/us/artist/willnotbill/1807622522"]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="music-motion-progress" id="music-motion-progress" aria-hidden="true" hidden></div>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="brand" href="./index.html" aria-label="William Li — portfolio home">
@@ -52,8 +55,11 @@
     <section class="artist-hero" aria-labelledby="artist-heading">
       <div class="wrap artist-hero-inner">
         <div class="artist-intro">
-          <div class="artist-overline"><span class="artist-live-dot" aria-hidden="true"></span> INDEPENDENT MUSIC / WILLNOTBILL</div>
-          <h1 id="artist-heading">The art of<br><em>WillnotBill.</em></h1>
+          <div class="artist-motion-toolbar">
+            <div class="artist-overline"><span class="artist-live-dot" aria-hidden="true"></span> INDEPENDENT MUSIC / WILLNOTBILL <span class="artist-equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+            <button type="button" class="music-motion-toggle" id="music-motion-toggle" aria-pressed="true" aria-label="Turn animations off"><span class="motion-control-dot" aria-hidden="true"></span><span class="motion-control-label">Motion</span><span class="motion-control-state" id="music-motion-state">ON</span></button>
+          </div>
+          <h1 id="artist-heading"><span class="headline-line">The art of</span><br><em class="headline-accent">WillnotBill.</em></h1>
           <p>Music, performance, and creative exploration. A growing catalog of original releases alongside the experiences that shape my sound.</p>
           <div class="artist-hero-actions">
             <a class="artist-primary" href="https://open.spotify.com/artist/6o7j62AHuq9XVvmj4C0V8a" target="_blank" rel="noopener noreferrer">Listen on Spotify <span aria-hidden="true">↗</span></a>
