@@ -250,3 +250,29 @@ html[data-music-motion="off"] .artist-spotlight .spotlight-image::after { opacit
   html.music-motion-ready[data-music-motion="on"] .artist-spotlight { animation-delay:.1s; }
   .artist-equalizer { display:none!important; }
 }
+
+
+/* Keep motion preferences obvious without crowding narrow navigation. */
+.artist-motion-toolbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px 20px;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.artist-motion-toolbar .artist-overline { min-width:0; }
+.artist-motion-toolbar .music-motion-toggle { flex-shrink:0; }
+html[data-music-motion-paused="yes"] .artist-main *,
+html[data-music-motion-paused="yes"] .artist-main *::before,
+html[data-music-motion-paused="yes"] .artist-main *::after,
+html[data-music-motion-paused="yes"] .music-highlight *,
+html[data-music-motion-paused="yes"] .music-highlight *::before,
+html[data-music-motion-paused="yes"] .music-highlight *::after {
+  animation-play-state: paused!important;
+}
+@media(max-width:560px) {
+  .artist-motion-toolbar { align-items:center; gap:10px; }
+  .artist-motion-toolbar .artist-overline { font-size:9px; }
+  .artist-motion-toolbar .music-motion-toggle { margin-left:auto; }
+}
